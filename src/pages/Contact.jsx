@@ -11,6 +11,7 @@ const services = [
   'Business Website with M-Pesa',
   'M-Pesa Integration',
   'Chama / SACCO System',
+  'Website Maintenance',
   'Website Care',
   'Custom software',
   'Something else',

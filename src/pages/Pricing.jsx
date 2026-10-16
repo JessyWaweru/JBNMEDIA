@@ -11,7 +11,7 @@ export default function Pricing() {
     <>
       <Seo
         title="Pricing"
-        description="JBN Media pricing: Online Presence KES 8,000/month, Growth KES 15,000/month, Content Clips from KES 6,000/month, Business Website with M-Pesa from KES 25,000, M-Pesa Integration from KES 12,000, Chama/SACCO System from KES 40,000."
+        description="JBN Media pricing: websites with M-Pesa from KES 10,000, website maintenance from KES 10,000, M-Pesa integration from KES 12,000, Chama/SACCO systems from KES 40,000, marketing plans from KES 6,000/month."
       />
 
       <section className="page-hero">
@@ -48,7 +48,7 @@ export default function Pricing() {
             <h2>Websites & business systems</h2>
             <p>One-off projects. You own what we build. 50% deposit to start, balance on handover.</p>
           </div>
-          <div className="plans plans-3">
+          <div className="plans plans-2">
             {projects.map((p) => <PlanCard key={p.id} plan={p} />)}
           </div>
         </div>
@@ -69,6 +69,7 @@ export default function Pricing() {
             </div>
             <div className="care-price">
               <div className="plan-price">
+                <span className="plan-from">from</span>
                 <span className="plan-currency">KES</span>
                 <span className="plan-amount">{care.price}</span>
                 <span className="plan-unit">{care.unit}</span>
