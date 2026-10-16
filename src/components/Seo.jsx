@@ -10,7 +10,7 @@ function setMeta(selector, attr, value) {
 export default function Seo({ title, description }) {
   const { pathname } = useLocation();
   useEffect(() => {
-    const fullTitle = title ? `${title} | JBN Media` : 'JBN Media | Websites, M-Pesa & Marketing for Nairobi Businesses';
+    const fullTitle = title ? `${title} | JBN Media` : 'JBN Media | Websites, M-Pesa & Marketing for Kenyan Businesses';
     const url = `${SITE.url}${pathname === '/' ? '/' : pathname}`;
     document.title = fullTitle;
     if (description) {

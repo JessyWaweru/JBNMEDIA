@@ -11,7 +11,7 @@ export const SITE = {
   phone: '+254115393779',
   phoneDisplay: '0115 393 779',
   email: 'hello@jbnmedia.org',
-  location: 'Nairobi, Kenya',
+  location: 'Kenya',
   hours: 'Mon to Sat, 8am to 6pm',
 };
 

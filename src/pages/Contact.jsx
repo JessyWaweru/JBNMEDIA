@@ -8,7 +8,7 @@ const services = [
   'Online Presence plan (KES 8,000/month)',
   'Growth plan (KES 15,000/month)',
   'Content Clips (from KES 6,000/month)',
-  'Business Website with M-Pesa',
+  'Business Website',
   'M-Pesa Integration',
   'Chama / SACCO System',
   'Website Maintenance',
@@ -47,7 +47,7 @@ export default function Contact() {
     <>
       <Seo
         title="Contact"
-        description="Contact JBN Media on WhatsApp or email. Websites, M-Pesa integration, Chama/SACCO systems and social media marketing in Nairobi."
+        description="Contact JBN Media on WhatsApp or email. Websites, M-Pesa integration, Chama/SACCO systems and social media marketing across Kenya."
       />
 
       <section className="page-hero">
@@ -71,7 +71,7 @@ export default function Contact() {
             <ul className="contact-list">
               <li><span className="icon-box icon-sm"><Call /></span><div><b>Call us</b><a href={telLink()}>{SITE.phoneDisplay}</a></div></li>
               <li><span className="icon-box icon-sm"><Mail /></span><div><b>Email</b><a href={mailLink()}>{SITE.email}</a></div></li>
-              <li><span className="icon-box icon-sm"><Pin /></span><div><b>Location</b><span>{SITE.location}. We meet clients across Nairobi or online.</span></div></li>
+              <li><span className="icon-box icon-sm"><Pin /></span><div><b>Location</b><span>We work with businesses all over {SITE.location}, online or in person.</span></div></li>
               <li><span className="icon-box icon-sm"><Clock /></span><div><b>Hours</b><span>{SITE.hours}</span></div></li>
             </ul>
           </div>

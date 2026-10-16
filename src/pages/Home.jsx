@@ -11,8 +11,8 @@ const pillars = [
   {
     icon: <Code />,
     title: 'Software for your business',
-    text: 'Websites that take M-Pesa, payment integrations for your existing systems, and Chama / SACCO software with loan maths built by an actuarial science graduate.',
-    points: ['Business websites with M-Pesa', 'M-Pesa STK Push, Till & Paybill', 'Chama / SACCO systems'],
+    text: 'Professional websites, M-Pesa payment integrations for your existing systems, and Chama / SACCO software with loan maths built by an actuarial science graduate.',
+    points: ['Business websites from KES 10,000', 'M-Pesa STK Push, Till & Paybill', 'Chama / SACCO systems'],
     link: '/services#software',
   },
   {
@@ -52,7 +52,7 @@ const steps = [
 const reasons = [
   { icon: <Phone />, title: 'Built for phones', text: 'Your customers are on their phones, so everything we build works perfectly on mobile first.' },
   { icon: <Card />, title: 'M-Pesa built in', text: 'Get paid the way Kenyans actually pay. STK Push, Till or Paybill, with records you can trust.' },
-  { icon: <Map />, title: 'Local & reachable', text: 'Nairobi-based and on WhatsApp. You talk to the people doing the work.' },
+  { icon: <Map />, title: 'Local & reachable', text: 'Kenyan, and always on WhatsApp. You talk to the people doing the work.' },
   { icon: <Shield />, title: 'Clear, fair pricing', text: 'Published prices, 50% to start, monthly plans you can cancel anytime.' },
   { icon: <Chart />, title: 'Numbers done properly', text: 'Founded by an actuarial science graduate. Loans, payments and ad results are calculated, not guessed.' },
   { icon: <Handshake />, title: 'One point of contact', text: 'Need bigger campaigns? We bring in partner agencies and manage them for you.' },
@@ -61,12 +61,12 @@ const reasons = [
 export default function Home() {
   return (
     <>
-      <Seo description="JBN Media gets Nairobi businesses found online and paid via M-Pesa. Websites, M-Pesa integration, Chama/SACCO systems and monthly social media marketing." />
+      <Seo description="JBN Media gets Kenyan businesses found online and paid via M-Pesa. Websites, M-Pesa integration, Chama/SACCO systems and monthly social media marketing." />
 
       <section className="hero">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <span className="eyebrow">Software & marketing · Nairobi</span>
+            <span className="eyebrow">Software & marketing · Kenya</span>
             <h1>
               Get your business <span className="hl">found online</span> and <span className="hl-gold">paid via M-Pesa</span>.
             </h1>

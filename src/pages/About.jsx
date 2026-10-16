@@ -20,7 +20,7 @@ export default function About() {
     <>
       <Seo
         title="About us"
-        description="JBN Media is a Nairobi software and marketing company, founded by an actuarial science graduate, helping Kenyan businesses, chamas and SACCOs get found online and paid via M-Pesa."
+        description="JBN Media is a Kenyan software and marketing company, founded by an actuarial science graduate, helping Kenyan businesses, chamas and SACCOs get found online and paid via M-Pesa."
       />
 
       <section className="page-hero">
@@ -28,7 +28,7 @@ export default function About() {
           <span className="eyebrow">About JBN Media</span>
           <h1>Helping Kenyan businesses win online</h1>
           <p className="lead">
-            We're a Nairobi-based software and marketing company. Our job is simple: get your business found online and
+            We're a Kenyan software and marketing company. Our job is simple: get your business found online and
             make it easy for customers to pay you.
           </p>
         </div>

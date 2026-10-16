@@ -11,7 +11,7 @@ export default function Pricing() {
     <>
       <Seo
         title="Pricing"
-        description="JBN Media pricing: websites with M-Pesa from KES 10,000, website maintenance from KES 10,000, M-Pesa integration from KES 12,000, Chama/SACCO systems from KES 40,000, marketing plans from KES 6,000/month."
+        description="JBN Media pricing: business websites from KES 10,000, website maintenance from KES 10,000, M-Pesa integration from KES 12,000, Chama/SACCO systems from KES 40,000, marketing plans from KES 6,000/month."
       />
 
       <section className="page-hero">

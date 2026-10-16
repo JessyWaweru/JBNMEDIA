@@ -8,11 +8,11 @@ const software = [
   {
     id: 'websites',
     icon: <Globe />,
-    title: 'Business websites with M-Pesa',
+    title: 'Business websites',
     price: 'from KES 10,000',
-    text: 'A fast, professional website on your own domain that works perfectly on phones and lets customers pay you directly with M-Pesa.',
-    points: ['Up to 5 pages, mobile-friendly', 'Your own domain', 'WhatsApp button and enquiry form', 'M-Pesa STK Push or Till', 'Ready in 2 to 3 weeks'],
-    wa: "Hi, I'm interested in a Business Website with M-Pesa",
+    text: 'A fast, professional website on your own domain that works perfectly on phones and sends customers straight to your WhatsApp. Add M-Pesa payments whenever you are ready.',
+    points: ['Up to 5 pages, mobile-friendly', 'Your own domain', 'WhatsApp button and enquiry form', 'Optional M-Pesa payments (from KES 12,000)', 'Ready in 2 to 3 weeks'],
+    wa: "Hi, I'm interested in a Business Website (from KES 10,000)",
   },
   {
     id: 'mpesa',
@@ -36,10 +36,10 @@ const software = [
     id: 'custom',
     icon: <Wrench />,
     title: 'Custom business software',
-    price: 'custom quote',
+    price: 'from KES 50,000',
     text: 'Booking systems, stock and sales tracking, school fee portals, customer dashboards. If your business runs on it, we can build it.',
     points: ['Built around how you already work', 'Works on phone and computer', 'M-Pesa where you need it', 'Fixed quote before we start'],
-    wa: "Hi, I'd like a quote for custom software for my business",
+    wa: "Hi, I'd like a quote for custom software for my business (from KES 50,000)",
   },
   {
     id: 'maintenance',
@@ -66,7 +66,7 @@ export default function Services() {
     <>
       <Seo
         title="Services"
-        description="Business websites with M-Pesa, M-Pesa integration, Chama/SACCO systems, custom software, social media management, Google Business Profile and ad campaigns for Kenyan businesses."
+        description="Business websites, M-Pesa integration, Chama/SACCO systems, custom software, social media management, Google Business Profile and ad campaigns for Kenyan businesses."
       />
 
       <section className="page-hero">
