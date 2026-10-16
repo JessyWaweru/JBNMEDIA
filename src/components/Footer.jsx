@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
-import { SITE, waLink, mailLink } from '../config';
+import { SITE, waLink, telLink, mailLink } from '../config';
 
 export default function Footer() {
   return (
@@ -37,6 +37,7 @@ export default function Footer() {
           <h4>Talk to us</h4>
           <ul>
             <li><a href={waLink()} target="_blank" rel="noopener noreferrer">WhatsApp: {SITE.whatsappDisplay}</a></li>
+            <li><a href={telLink()}>Call: {SITE.phoneDisplay}</a></li>
             <li><a href={mailLink()}>{SITE.email}</a></li>
             <li>{SITE.location}</li>
             <li>{SITE.hours}</li>
