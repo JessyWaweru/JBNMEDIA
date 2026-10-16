@@ -118,7 +118,7 @@ button, input, select, textarea { font: inherit; }
   border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer;
 }
 .nav-mobile {
-  position: fixed; inset: var(--header-h) 0 0 0; background: var(--bg);
+  position: fixed; top: var(--header-h); left: 0; right: 0; bottom: 0; z-index: 49; background: var(--bg);
   padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
   display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
   transform: translateX(100%); visibility: hidden; transition: transform 0.25s ease, visibility 0.25s;

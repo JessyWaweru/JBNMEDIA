@@ -32,35 +32,39 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className={`header ${scrolled ? 'is-scrolled' : ''}`}>
-      <div className="container header-inner">
-        <Link to="/" className="header-logo" aria-label="JBN Media home">
-          <Logo />
-        </Link>
+    <>
+      <header className={`header ${scrolled ? 'is-scrolled' : ''}`}>
+        <div className="container header-inner">
+          <Link to="/" className="header-logo" aria-label="JBN Media home">
+            <Logo />
+          </Link>
 
-        <nav className="nav-desktop" aria-label="Main">
-          {links.map((l) => (
-            <NavLink key={l.to} to={l.to} className="nav-link">
-              {l.label}
-            </NavLink>
-          ))}
-        </nav>
+          <nav className="nav-desktop" aria-label="Main">
+            {links.map((l) => (
+              <NavLink key={l.to} to={l.to} className="nav-link">
+                {l.label}
+              </NavLink>
+            ))}
+          </nav>
 
-        <div className="header-cta">
-          <WaButton className="btn-sm">WhatsApp us</WaButton>
+          <div className="header-cta">
+            <WaButton className="btn-sm">WhatsApp us</WaButton>
+          </div>
+
+          <button
+            className="menu-toggle"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen((o) => !o)}
+          >
+            {open ? <Close /> : <Menu />}
+          </button>
         </div>
+      </header>
 
-        <button
-          className="menu-toggle"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          onClick={() => setOpen((o) => !o)}
-        >
-          {open ? <Close /> : <Menu />}
-        </button>
-      </div>
-
-      <div className={`nav-mobile ${open ? 'is-open' : ''}`}>
+      {/* Kept outside <header>: its backdrop-filter would trap this fixed panel inside the header on iOS Safari. */}
+      <div id="mobile-menu" className={`nav-mobile ${open ? 'is-open' : ''}`}>
         <nav aria-label="Mobile">
           <NavLink to="/" end className="nav-mobile-link">Home</NavLink>
           {links.map((l) => (
@@ -76,6 +80,6 @@ export default function Header() {
           </a>
         </div>
       </div>
-    </header>
+    </>
   );
 }
