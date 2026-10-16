@@ -52,20 +52,20 @@ export const monthlyPlans = [
 export const projects = [
   {
     id: 'website',
-    name: 'Business Website with M-Pesa',
+    name: 'Business Website',
     from: true,
     price: '10,000',
     unit: 'one-off',
     featured: true,
     badge: 'Best value',
-    blurb: 'A professional site that takes payments from day one.',
+    blurb: 'A professional website that brings customers to your WhatsApp.',
     features: [
       'Up to 5 pages, mobile-friendly, your own domain',
       'WhatsApp button and enquiry form',
-      'M-Pesa payments (STK Push or Till)',
-      'Ready in 2 to 3 weeks',
+      'Set up so Google can find and list it',
+      'Add M-Pesa payments anytime with M-Pesa Integration',
     ],
-    wa: "Hi, I'm interested in the Business Website with M-Pesa (from KES 10,000)",
+    wa: "Hi, I'm interested in a Business Website (from KES 10,000)",
   },
   {
     id: 'mpesa',
