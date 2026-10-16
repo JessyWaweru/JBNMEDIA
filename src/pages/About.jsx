@@ -1,6 +1,12 @@
 import Seo from '../components/Seo';
 import CtaBand from '../components/CtaBand';
-import { Check, Phone, Card, Shield, Handshake } from '../components/Icons';
+import { Check, Phone, Card, Shield, Handshake, Users, Chart } from '../components/Icons';
+
+const edge = [
+  { icon: <Users />, title: 'Group finance', text: 'Chama and SACCO loans, interest and repayment schedules modelled the way a financial institution would.' },
+  { icon: <Chart />, title: 'Marketing ROI', text: 'Campaigns measured on cost per enquiry and tested properly, so your budget goes where it pays back.' },
+  { icon: <Card />, title: 'Fair, sustainable pricing', text: 'We price our own packages with the same care, so they stay affordable for you and viable for us.' },
+];
 
 const values = [
   { icon: <Phone />, title: 'Mobile first, always', text: 'Your customers live on their phones. Everything we make is designed for a phone screen first.' },
@@ -14,7 +20,7 @@ export default function About() {
     <>
       <Seo
         title="About us"
-        description="JBN Media is a Nairobi software and marketing company helping small businesses, chamas and SACCOs get found online and paid via M-Pesa."
+        description="JBN Media is a Nairobi software and marketing company, founded by an actuarial science graduate, helping Kenyan businesses, chamas and SACCOs get found online and paid via M-Pesa."
       />
 
       <section className="page-hero">
@@ -59,6 +65,33 @@ export default function About() {
         </div>
       </section>
 
+      <section className="section pt-0">
+        <div className="container">
+          <div className="edge">
+            <div className="edge-copy">
+              <span className="eyebrow eyebrow-light">The founder's edge</span>
+              <h2>Where actuarial science meets your business</h2>
+              <p>
+                JBN Media was founded by an actuarial science graduate. Actuaries are trained to price risk, model interest
+                and make decisions from data, for banks, insurers and pension funds. We use that same training for
+                Kenyan businesses that can't afford to guess.
+              </p>
+            </div>
+            <ul className="edge-list">
+              {edge.map((e) => (
+                <li key={e.title}>
+                  <span className="icon-box icon-box-dark">{e.icon}</span>
+                  <div>
+                    <h3>{e.title}</h3>
+                    <p>{e.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section className="section section-tint">
         <div className="container">
           <div className="section-head">
@@ -84,7 +117,7 @@ export default function About() {
             <h2>A small team with a big network</h2>
           </div>
           <p className="prose-center">
-            Our in-house team builds the software and runs day-to-day marketing. When a project needs more, such as video
+            Our in-house team builds the software and runs content, clips and Meta ads day to day. When a project needs more, such as video
             production, influencer campaigns or large ad budgets, we bring in specialist partner agencies and manage them
             for you. You get agency-level reach with a single, accountable point of contact.
           </p>

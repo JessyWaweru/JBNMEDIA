@@ -239,7 +239,7 @@ button, input, select, textarea { font: inherit; }
 
 /* ── Plans ─────────────────────────────── */
 .plans { display: grid; gap: 20px; align-items: stretch; }
-@media (min-width: 720px) { .plans-2 { grid-template-columns: repeat(2, 1fr); max-width: 860px; } }
+@media (min-width: 720px) { .plans-2 { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 720px) { .plans-3 { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1020px) { .plans-3 { grid-template-columns: repeat(3, 1fr); } }
 .plan {
@@ -310,6 +310,7 @@ button, input, select, textarea { font: inherit; }
 .service-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; gap: 12px; }
 .service-price { font-weight: 700; font-size: 0.88rem; color: var(--brand); background: var(--brand-50); padding: 6px 12px; border-radius: 999px; }
 .service > p { color: var(--muted); }
+@media (min-width: 800px) { .service:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 
 .mini-grid { display: grid; gap: 16px; }
 @media (min-width: 640px) { .mini-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
@@ -413,3 +414,16 @@ button, input, select, textarea { font: inherit; }
 .footer a { color: rgba(255, 255, 255, 0.75); }
 .footer a:hover { color: var(--gold); }
 .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); }
+
+/* ── Actuarial edge ─────────────────────────────── */
+.edge {
+  display: grid; gap: 28px; padding: 32px 24px; border-radius: 24px;
+  background: var(--ink); color: rgba(255, 255, 255, 0.75);
+}
+.edge h2, .edge h3 { color: #fff; }
+.edge h3 { font-size: 1.05rem; margin-bottom: 4px; }
+.edge-copy p { margin: 0; font-size: 1.05rem; }
+.edge-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 20px; }
+.edge-list li { display: flex; gap: 14px; align-items: flex-start; }
+.edge-list p { margin: 0; font-size: 0.95rem; }
+@media (min-width: 900px) { .edge { grid-template-columns: 1fr 1.1fr; gap: 56px; padding: 56px; align-items: center; } }

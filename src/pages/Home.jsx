@@ -5,22 +5,40 @@ import PlanCard from '../components/PlanCard';
 import CtaBand from '../components/CtaBand';
 import Faq from '../components/Faq';
 import { monthlyPlans, projects, faqs } from '../data/plans';
-import { WhatsAppIcon, Arrow, Check, Code, Megaphone, Phone, Card, Map, Users, Handshake, Shield } from '../components/Icons';
+import { WhatsAppIcon, Arrow, Check, Code, Megaphone, Phone, Card, Map, Chart, Handshake, Shield, Users } from '../components/Icons';
 
 const pillars = [
   {
     icon: <Code />,
     title: 'Software for your business',
-    text: 'Websites that take M-Pesa, payment integrations for your existing systems, and Chama / SACCO management software that does the maths for you.',
+    text: 'Websites that take M-Pesa, payment integrations for your existing systems, and Chama / SACCO software with loan maths built by an actuarial science graduate.',
     points: ['Business websites with M-Pesa', 'M-Pesa STK Push, Till & Paybill', 'Chama / SACCO systems'],
     link: '/services#software',
   },
   {
     icon: <Megaphone />,
     title: 'Marketing that brings enquiries',
-    text: 'Social media content, Google Business Profile, WhatsApp catalogs and ad campaigns, run by our team and our network of trusted partner agencies.',
-    points: ['Social media posts & short videos', 'Google Business Profile', 'Facebook, Instagram & TikTok ads'],
+    text: 'Social media content, short-form clips, Google Business Profile, WhatsApp catalogs and Meta ads, judged on the enquiries they bring in, not likes.',
+    points: ['Social media posts & short-form clips', 'Google Business Profile', 'Facebook & Instagram (Meta) ads'],
     link: '/services#marketing',
+  },
+];
+
+const edge = [
+  {
+    icon: <Users />,
+    title: 'Chama & SACCO loans, right to the shilling',
+    text: 'Reducing balance, flat rate and repayment schedules modelled properly, so members trust the numbers.',
+  },
+  {
+    icon: <Chart />,
+    title: 'Marketing judged on data, not likes',
+    text: 'We track cost per enquiry and test what works, then put your budget where it pays back.',
+  },
+  {
+    icon: <Card />,
+    title: 'Payment records that reconcile',
+    text: 'Every M-Pesa payment is matched and recorded, so your books and your till always agree.',
   },
 ];
 
@@ -36,7 +54,7 @@ const reasons = [
   { icon: <Card />, title: 'M-Pesa built in', text: 'Get paid the way Kenyans actually pay. STK Push, Till or Paybill, with records you can trust.' },
   { icon: <Map />, title: 'Local & reachable', text: 'Nairobi-based and on WhatsApp. You talk to the people doing the work.' },
   { icon: <Shield />, title: 'Clear, fair pricing', text: 'Published prices, 50% to start, monthly plans you can cancel anytime.' },
-  { icon: <Users />, title: 'Made for SMEs & groups', text: 'Shops, salons, clinics, schools, restaurants, chamas and SACCOs.' },
+  { icon: <Chart />, title: 'Numbers done properly', text: 'Founded by an actuarial science graduate. Loans, payments and ad results are calculated, not guessed.' },
   { icon: <Handshake />, title: 'One point of contact', text: 'Need bigger campaigns? We bring in partner agencies and manage them for you.' },
 ];
 
@@ -65,7 +83,7 @@ export default function Home() {
               </Link>
             </div>
             <ul className="hero-ticks">
-              <li><Check /> Websites from KES 25,000</li>
+              <li><Check /> Websites from KES 10,000</li>
               <li><Check /> Marketing from KES 8,000/month</li>
               <li><Check /> Cancel monthly plans anytime</li>
             </ul>
@@ -129,6 +147,32 @@ export default function Home() {
                 <Link to={p.link} className="text-link">Learn more <Arrow /></Link>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section pt-0">
+        <div className="container">
+          <div className="edge">
+            <div className="edge-copy">
+              <span className="eyebrow eyebrow-light">Our unfair advantage</span>
+              <h2>Built by an actuarial science graduate</h2>
+              <p>
+                Actuarial science is the maths of money, interest and risk that banks, insurers and pension funds run on.
+                We bring that same discipline to small businesses and groups.
+              </p>
+            </div>
+            <ul className="edge-list">
+              {edge.map((e) => (
+                <li key={e.title}>
+                  <span className="icon-box icon-box-dark">{e.icon}</span>
+                  <div>
+                    <h3>{e.title}</h3>
+                    <p>{e.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

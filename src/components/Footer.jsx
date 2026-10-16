@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="footer-brand">
           <Logo />
           <p>{SITE.tagline}</p>
-          <p className="muted-light">Software and marketing for Kenyan businesses, built in {SITE.location}.</p>
+          <p className="muted-light">Software and marketing founded by an actuarial science graduate. Numbers you can trust.</p>
         </div>
 
         <div>

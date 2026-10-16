@@ -2,16 +2,16 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import WaButton from '../components/WaButton';
 import CtaBand from '../components/CtaBand';
-import { Arrow, Check, Globe, Card, Users, Megaphone, Map, Chart, Handshake, Wrench, Video, Report } from '../components/Icons';
+import { Arrow, Check, Globe, Card, Users, Megaphone, Map, Chart, Handshake, Wrench, Video, Report, Shield } from '../components/Icons';
 
 const software = [
   {
     id: 'websites',
     icon: <Globe />,
     title: 'Business websites with M-Pesa',
-    price: 'from KES 25,000',
+    price: 'from KES 10,000',
     text: 'A fast, professional website on your own domain that works perfectly on phones and lets customers pay you directly with M-Pesa.',
-    points: ['Up to 5 pages, mobile-friendly', 'Your own domain (.co.ke or .com)', 'WhatsApp button and enquiry form', 'M-Pesa STK Push or Till', 'Ready in 2 to 3 weeks'],
+    points: ['Up to 5 pages, mobile-friendly', 'Your own domain', 'WhatsApp button and enquiry form', 'M-Pesa STK Push or Till', 'Ready in 2 to 3 weeks'],
     wa: "Hi, I'm interested in a Business Website with M-Pesa",
   },
   {
@@ -28,7 +28,7 @@ const software = [
     icon: <Users />,
     title: 'Chama & SACCO systems',
     price: 'from KES 40,000',
-    text: 'Replace the notebook and spreadsheet with a system that tracks every contribution, calculates loans correctly and gives members their own statements.',
+    text: 'Replace the notebook and spreadsheet with a system that tracks every contribution and gives members their own statements. The loan maths is designed by an actuarial science graduate, so interest and repayment schedules are right to the shilling.',
     points: ['Automatic contribution tracking', 'Loans on reducing balance or flat rate', 'Correct interest and repayment schedules', 'M-Pesa contributions', 'Member statements'],
     wa: "Hi, I'm interested in a Chama / SACCO System",
   },
@@ -36,20 +36,29 @@ const software = [
     id: 'custom',
     icon: <Wrench />,
     title: 'Custom business software',
-    price: 'quoted per project',
+    price: 'custom quote',
     text: 'Booking systems, stock and sales tracking, school fee portals, customer dashboards. If your business runs on it, we can build it.',
     points: ['Built around how you already work', 'Works on phone and computer', 'M-Pesa where you need it', 'Fixed quote before we start'],
     wa: "Hi, I'd like a quote for custom software for my business",
   },
+  {
+    id: 'maintenance',
+    icon: <Shield />,
+    title: 'Website maintenance',
+    price: 'from KES 10,000',
+    text: 'Website broken, slow, insecure or out of date? We fix and update existing websites, including ones we did not build.',
+    points: ['Fix errors, broken pages and forms', 'Speed, security and mobile fixes', 'Content, price and design updates', 'Free check of your site before we quote'],
+    wa: "Hi, I'd like Website Maintenance for my existing website (from KES 10,000)",
+  },
 ];
 
 const marketing = [
-  { icon: <Megaphone />, title: 'Social media management', text: 'Designed posts, captions and short videos for Facebook, Instagram and TikTok, posted on a regular schedule.' },
+  { icon: <Megaphone />, title: 'Social media management', text: 'Designed posts, captions and short videos for Facebook, Instagram and TikTok, made from photos you send us, graphics and AI visuals. No shoots needed.' },
   { icon: <Map />, title: 'Google Business Profile', text: 'Show up on Google Maps and search when people nearby look for what you sell, with photos, hours and reviews.' },
   { icon: <Card />, title: 'WhatsApp Business catalog', text: 'Your products and prices neatly set up in WhatsApp so customers can browse and order in the chat.' },
   { icon: <Video />, title: 'Content clips', text: 'We cut your lives, videos and podcasts into short captioned clips for TikTok, Reels, Shorts and WhatsApp Status. From KES 6,000/month for 15 clips.' },
-  { icon: <Chart />, title: 'Ad campaigns', text: 'Targeted Facebook, Instagram and Google ads, managed and optimised so your budget brings real enquiries.' },
-  { icon: <Report />, title: 'Monthly reports', text: 'A one-page report every month in plain English: your reach, the enquiries you got and what we will do next.' },
+  { icon: <Chart />, title: 'Meta ad campaigns', text: 'Targeted Facebook and Instagram ads. We test, measure cost per enquiry and move budget to what works, the way an actuarial mind treats money.' },
+  { icon: <Report />, title: 'Monthly reports', text: 'A one-page report every month in plain English: reach, enquiries, cost per enquiry and what we will do next. Real analysis, not screenshots of likes.' },
 ];
 
 export default function Services() {
@@ -148,7 +157,7 @@ export default function Services() {
                 <li><Check /> Photo & video production</li>
                 <li><Check /> Influencer campaigns</li>
                 <li><Check /> Brand identity & logo design</li>
-                <li><Check /> Large-budget paid advertising</li>
+                <li><Check /> Google, TikTok & large-budget advertising</li>
                 <li><Check /> Events & activations</li>
               </ul>
             </div>

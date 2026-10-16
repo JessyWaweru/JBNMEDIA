@@ -3,7 +3,7 @@ export const SITE = {
   name: 'JBN Media',
   url: 'https://jbnmedia.org',
   domain: 'jbnmedia.org',
-  tagline: 'We get Nairobi businesses found online and paid via M-Pesa.',
+  tagline: 'We get Kenyan businesses found online and paid via M-Pesa.',
   // WhatsApp number in international format: digits only, no "+", no spaces, no leading 0.
   whatsapp: '254703261126',
   whatsappDisplay: '0703 261 126',
