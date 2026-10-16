@@ -7,6 +7,7 @@ import { WhatsAppIcon, Mail, Pin, Clock, Call } from '../components/Icons';
 const services = [
   'Online Presence plan (KES 8,000/month)',
   'Growth plan (KES 15,000/month)',
+  'Content Clips (from KES 6,000/month)',
   'Business Website with M-Pesa',
   'M-Pesa Integration',
   'Chama / SACCO System',

@@ -29,6 +29,22 @@ export const monthlyPlans = [
     ],
     wa: "Hi, I'm interested in the Growth plan (KES 15,000/month)",
   },
+  {
+    id: 'content-clips',
+    name: 'Content Clips',
+    from: true,
+    price: '6,000',
+    unit: '/month',
+    badge: 'New',
+    blurb: 'Turn your long videos into short clips that get watched and shared.',
+    features: [
+      '15 short clips a month, cut from your videos, lives or podcasts',
+      'Vertical format for TikTok, Reels, YouTube Shorts and WhatsApp Status',
+      'Captions, strong hooks and your branding on every clip',
+      'Need more? Up to 20 clips a month for up to KES 10,000',
+    ],
+    wa: "Hi, I'm interested in the Content Clips package (from KES 6,000/month)",
+  },
 ];
 
 export const projects = [
@@ -111,6 +127,10 @@ export const faqs = [
   {
     q: 'Why do some prices say "from"?',
     a: 'Every business is a little different. The "from" price covers the standard package. If you need more pages, features or integrations, we will give you a clear fixed quote before we start.',
+  },
+  {
+    q: 'What is Content Clips?',
+    a: 'Send us your long videos, such as Instagram or TikTok lives, YouTube videos, podcasts, church services or event recordings. We cut out the best moments and turn them into short, captioned vertical clips ready to post. 15 clips a month from KES 6,000, or up to 20 clips for up to KES 10,000.',
   },
   {
     q: 'Can I cancel a monthly plan?',
