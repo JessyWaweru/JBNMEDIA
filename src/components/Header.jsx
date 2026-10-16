@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Logo from './Logo';
 import WaButton from './WaButton';
-import { Menu, Close } from './Icons';
+import { Menu, Close, Call } from './Icons';
+import { SITE, telLink } from '../config';
 
 const links = [
   { to: '/services', label: 'Services' },
@@ -68,7 +69,12 @@ export default function Header() {
             </NavLink>
           ))}
         </nav>
-        <WaButton size="lg" className="btn-block">Chat with us on WhatsApp</WaButton>
+        <div className="nav-mobile-actions">
+          <WaButton size="lg" className="btn-block">Chat with us on WhatsApp</WaButton>
+          <a href={telLink()} className="btn btn-outline btn-lg btn-block">
+            <Call /> <span>Call {SITE.phoneDisplay}</span>
+          </a>
+        </div>
       </div>
     </header>
   );

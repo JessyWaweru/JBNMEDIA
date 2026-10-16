@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Seo from '../components/Seo';
 import WaButton from '../components/WaButton';
-import { SITE, waLink, mailLink } from '../config';
-import { WhatsAppIcon, Mail, Pin, Clock } from '../components/Icons';
+import { SITE, waLink, telLink, mailLink } from '../config';
+import { WhatsAppIcon, Mail, Pin, Clock, Call } from '../components/Icons';
 
 const services = [
   'Online Presence plan (KES 8,000/month)',
@@ -67,6 +67,7 @@ export default function Contact() {
               </span>
             </a>
             <ul className="contact-list">
+              <li><span className="icon-box icon-sm"><Call /></span><div><b>Call us</b><a href={telLink()}>{SITE.phoneDisplay}</a></div></li>
               <li><span className="icon-box icon-sm"><Mail /></span><div><b>Email</b><a href={mailLink()}>{SITE.email}</a></div></li>
               <li><span className="icon-box icon-sm"><Pin /></span><div><b>Location</b><span>{SITE.location}. We meet clients across Nairobi or online.</span></div></li>
               <li><span className="icon-box icon-sm"><Clock /></span><div><b>Hours</b><span>{SITE.hours}</span></div></li>
