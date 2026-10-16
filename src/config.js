@@ -8,8 +8,8 @@ export const SITE = {
   whatsapp: '254703261126',
   whatsappDisplay: '0703 261 126',
   // Number for normal phone calls.
-  phone: '+254703261126',
-  phoneDisplay: '0703 261 126',
+  phone: '+254115393779',
+  phoneDisplay: '0115 393 779',
   email: 'hello@jbnmedia.org',
   location: 'Nairobi, Kenya',
   hours: 'Mon to Sat, 8am to 6pm',
