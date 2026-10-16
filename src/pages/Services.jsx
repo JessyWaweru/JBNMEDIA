@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import WaButton from '../components/WaButton';
 import CtaBand from '../components/CtaBand';
-import { Arrow, Check, Globe, Card, Users, Megaphone, Map, Chart, Handshake, Wrench } from '../components/Icons';
+import { Arrow, Check, Globe, Card, Users, Megaphone, Map, Chart, Handshake, Wrench, Video, Report } from '../components/Icons';
 
 const software = [
   {
@@ -47,7 +47,9 @@ const marketing = [
   { icon: <Megaphone />, title: 'Social media management', text: 'Designed posts, captions and short videos for Facebook, Instagram and TikTok, posted on a regular schedule.' },
   { icon: <Map />, title: 'Google Business Profile', text: 'Show up on Google Maps and search when people nearby look for what you sell, with photos, hours and reviews.' },
   { icon: <Card />, title: 'WhatsApp Business catalog', text: 'Your products and prices neatly set up in WhatsApp so customers can browse and order in the chat.' },
+  { icon: <Video />, title: 'Content clips', text: 'We cut your lives, videos and podcasts into short captioned clips for TikTok, Reels, Shorts and WhatsApp Status. From KES 6,000/month for 15 clips.' },
   { icon: <Chart />, title: 'Ad campaigns', text: 'Targeted Facebook, Instagram and Google ads, managed and optimised so your budget brings real enquiries.' },
+  { icon: <Report />, title: 'Monthly reports', text: 'A one-page report every month in plain English: your reach, the enquiries you got and what we will do next.' },
 ];
 
 export default function Services() {
@@ -107,7 +109,7 @@ export default function Services() {
               what we'll do next.
             </p>
           </div>
-          <div className="mini-grid">
+          <div className="mini-grid mini-grid-3">
             {marketing.map((m) => (
               <div key={m.title} className="mini">
                 <span className="icon-box">{m.icon}</span>

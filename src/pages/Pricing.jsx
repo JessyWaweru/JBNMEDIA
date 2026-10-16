@@ -11,7 +11,7 @@ export default function Pricing() {
     <>
       <Seo
         title="Pricing"
-        description="JBN Media pricing: Online Presence KES 8,000/month, Growth KES 15,000/month, Business Website with M-Pesa from KES 25,000, M-Pesa Integration from KES 12,000, Chama/SACCO System from KES 40,000."
+        description="JBN Media pricing: Online Presence KES 8,000/month, Growth KES 15,000/month, Content Clips from KES 6,000/month, Business Website with M-Pesa from KES 25,000, M-Pesa Integration from KES 12,000, Chama/SACCO System from KES 40,000."
       />
 
       <section className="page-hero">
@@ -34,9 +34,9 @@ export default function Pricing() {
         <div className="container">
           <div className="group-head">
             <h2>Monthly marketing plans</h2>
-            <p>Get found on Google, Facebook, Instagram and WhatsApp. Month to month, cancel anytime.</p>
+            <p>Get found on Google, Facebook, Instagram, TikTok and WhatsApp. Month to month, cancel anytime.</p>
           </div>
-          <div className="plans plans-2">
+          <div className="plans plans-3">
             {monthlyPlans.map((p) => <PlanCard key={p.id} plan={p} />)}
           </div>
         </div>

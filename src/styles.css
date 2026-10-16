@@ -314,6 +314,7 @@ button, input, select, textarea { font: inherit; }
 .mini-grid { display: grid; gap: 16px; }
 @media (min-width: 640px) { .mini-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
 @media (min-width: 1020px) { .mini-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 1020px) { .mini-grid-3 { grid-template-columns: repeat(3, 1fr); } }
 .mini { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
 .mini .icon-box { margin-bottom: 14px; }
 .mini p { color: var(--muted); margin: 0; font-size: 0.96rem; }
