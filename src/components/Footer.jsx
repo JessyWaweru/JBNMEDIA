@@ -1,14 +1,27 @@
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
+import CurvedLoop from './reactbits/CurvedLoop';
+import ShinyText from './reactbits/ShinyText';
 import { SITE, waLink, telLink, mailLink } from '../config';
 
 export default function Footer() {
   return (
     <footer className="footer">
+      <div className="footer-loop" aria-hidden="true">
+        <CurvedLoop
+          marqueeText="Get found online ✦ Get paid via M-Pesa ✦ Grow with JBN Media ✦ "
+          speed={1.2}
+          curveAmount={120}
+          fontSize={64}
+          fontWeight={800}
+          color="rgba(255, 255, 255, 0.9)"
+          interactive
+        />
+      </div>
       <div className="container footer-grid">
         <div className="footer-brand">
           <Logo />
-          <p>{SITE.tagline}</p>
+          <p><ShinyText text={SITE.tagline} color="rgba(255, 255, 255, 0.75)" shineColor="#ffb703" speed={3} /></p>
           <p className="muted-light">Software and marketing founded by an actuarial science graduate. Numbers you can trust.</p>
         </div>
 

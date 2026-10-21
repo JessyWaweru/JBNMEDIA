@@ -5,6 +5,21 @@ import PlanCard from '../components/PlanCard';
 import CtaBand from '../components/CtaBand';
 import Faq from '../components/Faq';
 import { monthlyPlans, projects, faqs } from '../data/plans';
+import Aurora from '../components/reactbits/Aurora';
+import BlurText from '../components/reactbits/BlurText';
+import CircularText from '../components/reactbits/CircularText';
+import DecryptedText from '../components/reactbits/DecryptedText';
+import GlareHover from '../components/reactbits/GlareHover';
+import ScrollVelocity from '../components/reactbits/ScrollVelocity';
+import StarBorder from '../components/reactbits/StarBorder';
+import Threads from '../components/reactbits/Threads';
+import Reveal from '../components/fx/Reveal';
+import GradientText from '../components/reactbits/GradientText';
+import LogoLoop from '../components/reactbits/LogoLoop';
+import Magnet from '../components/reactbits/Magnet';
+import RotatingText from '../components/reactbits/RotatingText';
+import GlowCard from '../components/fx/GlowCard';
+import { useFinePointer } from '../hooks/useFinePointer';
 import { WhatsAppIcon, Arrow, Check, Code, Megaphone, Phone, Card, Map, Chart, Handshake, Shield, Users } from '../components/Icons';
 
 const pillars = [
@@ -58,26 +73,64 @@ const reasons = [
   { icon: <Handshake />, title: 'One point of contact', text: 'Need bigger campaigns? We bring in partner agencies and manage them for you.' },
 ];
 
+const audiences = ['restaurants', 'salons', 'chamas', 'SACCOs', 'shops', 'clinics', 'schools'];
+
+const trustItems = ['M-Pesa STK Push', 'Till & Paybill', 'Google Business', 'WhatsApp Business', 'Facebook & Instagram', 'TikTok'].map(
+  (t) => ({ node: <span className="trust-item">{t}</span>, title: t })
+);
+
+function Heading({ children }) {
+  return <BlurText as="h2" text={children} className="blur-heading" delay={60} />;
+}
+
 export default function Home() {
+  const finePointer = useFinePointer();
   return (
     <>
       <Seo description="JBN Media gets Kenyan businesses found online and paid via M-Pesa. Websites, M-Pesa integration, Chama/SACCO systems and monthly social media marketing." />
 
       <section className="hero">
+        <Aurora
+          className="hero-aurora"
+          colorStops={['#0b6e4f', '#25d366', '#ffb703']}
+          lightMode
+          amplitude={1}
+          blend={0.6}
+          height={0.6}
+          speed={0.6}
+          opacity={0.85}
+        />
         <div className="container hero-grid">
           <div className="hero-copy">
             <span className="eyebrow">Software & marketing · Kenya</span>
             <h1>
-              Get your business <span className="hl">found online</span> and <span className="hl-gold">paid via M-Pesa</span>.
+              Get your business{' '}
+              <GradientText className="hl" colors={['#0b6e4f', '#25d366', '#0b6e4f']} animationSpeed={6}>
+                found online
+              </GradientText>{' '}
+              and <span className="hl-gold">paid via M-Pesa</span>.
             </h1>
             <p className="lead">
               We build websites and business systems with M-Pesa built in, and we run the social media and ads that bring
               customers to your door.
             </p>
+            <div className="hero-for">
+              <span>Built for Kenyan</span>
+              <RotatingText
+                texts={audiences}
+                mainClassName="hero-rotate"
+                staggerDuration={0.025}
+                staggerFrom="last"
+                rotationInterval={2200}
+                splitBy="characters"
+              />
+            </div>
             <div className="hero-actions">
-              <WaButton size="lg" message="Hi JBN Media, I'd like to get my business online.">
-                Chat on WhatsApp
-              </WaButton>
+              <Magnet padding={60} magnetStrength={4} disabled={!finePointer} wrapperClassName="hero-magnet">
+                <WaButton size="lg" message="Hi JBN Media, I'd like to get my business online.">
+                  Chat on WhatsApp
+                </WaButton>
+              </Magnet>
               <Link to="/pricing" className="btn btn-outline btn-lg">
                 See pricing <Arrow />
               </Link>
@@ -118,26 +171,28 @@ export default function Home() {
       </section>
 
       <section className="trust">
-        <div className="container trust-inner">
-          <span>M-Pesa STK Push</span>
-          <span>Till & Paybill</span>
-          <span>Google Business</span>
-          <span>WhatsApp Business</span>
-          <span>Facebook & Instagram</span>
-          <span>TikTok</span>
-        </div>
+        <LogoLoop
+          logos={trustItems}
+          speed={50}
+          gap={40}
+          logoHeight={24}
+          pauseOnHover
+          fadeOut
+          ariaLabel="Platforms we work with"
+          className="trust-loop"
+        />
       </section>
 
       <section className="section">
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">What we do</span>
-            <h2>One team for your software and your marketing</h2>
+            <Heading>One team for your software and your marketing</Heading>
             <p>Build the tools that run your business, then get customers using them.</p>
           </div>
-          <div className="pillars">
+          <Reveal className="pillars" stagger={0.15}>
             {pillars.map((p) => (
-              <article key={p.title} className="pillar">
+              <GlowCard key={p.title} className="pillar" theme="light" spotlightColor="#0b6e4f" intensity={0.35}>
                 <span className="icon-box">{p.icon}</span>
                 <h3>{p.title}</h3>
                 <p>{p.text}</p>
@@ -145,34 +200,58 @@ export default function Home() {
                   {p.points.map((pt) => (<li key={pt}><Check /> {pt}</li>))}
                 </ul>
                 <Link to={p.link} className="text-link">Learn more <Arrow /></Link>
-              </article>
+              </GlowCard>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="section pt-0">
+      <section className="velocity-band" aria-hidden="true">
+        <ScrollVelocity
+          texts={['Websites ✦ M-Pesa ✦ Chama & SACCO systems ✦', 'Social media ✦ Content clips ✦ Google ✦ Meta ads ✦']}
+          velocity={40}
+          className="velocity-text"
+          outlineAlternate
+          numCopies={4}
+          skewWithVelocity={6}
+        />
+      </section>
+
+      <section className="section">
         <div className="container">
           <div className="edge">
+            <Threads className="edge-threads" color={[1, 0.72, 0.01]} amplitude={1.2} distance={0.2} lineCount={40} opacity={0.35} />
             <div className="edge-copy">
               <span className="eyebrow eyebrow-light">Our unfair advantage</span>
-              <h2>Built by an actuarial science graduate</h2>
+              <h2>
+                <DecryptedText
+                  text="Built by an actuarial science graduate"
+                  animateOn="view"
+                  sequential
+                  speed={30}
+                  characters="0123456789%+−×÷=KES"
+                  encryptedClassName="decrypt-enc"
+                />
+              </h2>
               <p>
                 Actuarial science is the maths of money, interest and risk that banks, insurers and pension funds run on.
                 We bring that same discipline to small businesses and groups.
               </p>
+              <div className="edge-badge" aria-hidden="true">
+                <CircularText text="NUMBERS ✦ DONE ✦ RIGHT ✦ " size={120} fontSize={13} spinDuration={18} color="#ffb703" />
+              </div>
             </div>
-            <ul className="edge-list">
+            <Reveal className="edge-list" stagger={0.12}>
               {edge.map((e) => (
-                <li key={e.title}>
+                <div key={e.title} className="edge-item">
                   <span className="icon-box icon-box-dark">{e.icon}</span>
                   <div>
                     <h3>{e.title}</h3>
                     <p>{e.text}</p>
                   </div>
-                </li>
+                </div>
               ))}
-            </ul>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -181,16 +260,18 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Popular packages</span>
-            <h2>Simple prices. No surprises.</h2>
+            <Heading>Simple prices. No surprises.</Heading>
             <p>Tap any package to chat with us about it on WhatsApp.</p>
           </div>
-          <div className="plans plans-3">
+          <Reveal className="plans plans-3" stagger={0.12}>
             <PlanCard plan={monthlyPlans[0]} />
             <PlanCard plan={projects[0]} />
             <PlanCard plan={monthlyPlans[1]} />
-          </div>
+          </Reveal>
           <div className="center mt-32">
-            <Link to="/pricing" className="btn btn-outline">View all pricing <Arrow /></Link>
+            <StarBorder as={Link} to="/pricing" className="btn star-btn" theme="light" color="#0b6e4f" radius={999} duration={4}>
+              View all pricing <Arrow />
+            </StarBorder>
           </div>
         </div>
       </section>
@@ -199,35 +280,46 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">How it works</span>
-            <h2>From first message to launch</h2>
+            <Heading>From first message to launch</Heading>
           </div>
-          <ol className="steps">
+          <Reveal className="steps" stagger={0.12}>
             {steps.map((s) => (
-              <li key={s.n} className="step">
-                <span className="step-n">{s.n}</span>
-                <h3>{s.title}</h3>
-                <p>{s.text}</p>
-              </li>
+              <GlareHover key={s.n} className="step" glareColor="#ffb703" glareOpacity={0.35} borderRadius="18px" blendMode="multiply">
+                <div className="step-inner">
+                  <span className="step-n">{s.n}</span>
+                  <h3>{s.title}</h3>
+                  <p>{s.text}</p>
+                </div>
+              </GlareHover>
             ))}
-          </ol>
+          </Reveal>
         </div>
       </section>
 
-      <section className="section section-dark">
+      <section className="section section-dark section-aurora">
+        <Aurora
+          className="dark-aurora"
+          colorStops={['#063d2c', '#25d366', '#ffb703']}
+          amplitude={0.8}
+          blend={0.55}
+          speed={0.5}
+          opacity={0.45}
+          mouseInteraction={false}
+        />
         <div className="container">
           <div className="section-head">
             <span className="eyebrow eyebrow-light">Why JBN Media</span>
-            <h2>Built for how Kenyan businesses really work</h2>
+            <Heading>Built for how Kenyan businesses really work</Heading>
           </div>
-          <div className="reasons">
+          <Reveal className="reasons" stagger={0.08}>
             {reasons.map((r) => (
-              <div key={r.title} className="reason">
+              <GlowCard key={r.title} className="reason" spotlightColor="#ffb703" intensity={0.3} borderGlow={1} spotlightSize={300}>
                 <span className="icon-box icon-box-dark">{r.icon}</span>
                 <h3>{r.title}</h3>
                 <p>{r.text}</p>
-              </div>
+              </GlowCard>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -235,9 +327,11 @@ export default function Home() {
         <div className="container narrow">
           <div className="section-head">
             <span className="eyebrow">Questions</span>
-            <h2>Frequently asked</h2>
+            <Heading>Frequently asked</Heading>
           </div>
-          <Faq items={faqs.slice(0, 4)} />
+          <Reveal>
+            <Faq items={faqs.slice(0, 4)} />
+          </Reveal>
         </div>
       </section>
 

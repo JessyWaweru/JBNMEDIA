@@ -1,11 +1,25 @@
 import Seo from '../components/Seo';
 import CtaBand from '../components/CtaBand';
+import PageHero from '../components/fx/PageHero';
+import Reveal from '../components/fx/Reveal';
+import CircularText from '../components/reactbits/CircularText';
+import DecryptedText from '../components/reactbits/DecryptedText';
+import ScrollReveal from '../components/reactbits/ScrollReveal';
+import GlowCard from '../components/fx/GlowCard';
+import Threads from '../components/reactbits/Threads';
+import Waves from '../components/reactbits/Waves';
 import { Check, Phone, Card, Shield, Handshake, Users, Chart } from '../components/Icons';
 
 const edge = [
   { icon: <Users />, title: 'Group finance', text: 'Chama and SACCO loans, interest and repayment schedules modelled the way a financial institution would.' },
   { icon: <Chart />, title: 'Marketing ROI', text: 'Campaigns measured on cost per enquiry and tested properly, so your budget goes where it pays back.' },
   { icon: <Card />, title: 'Fair, sustainable pricing', text: 'We price our own packages with the same care, so they stay affordable for you and viable for us.' },
+];
+
+const story = [
+  'Too many great Kenyan businesses are invisible online. Customers search on Google, scroll Instagram and ask on WhatsApp, and they end up buying from whoever shows up first.',
+  "At the same time, the tools that could help are often built for other markets. They don't talk to M-Pesa, they're slow on a phone, or they're priced for big corporates.",
+  'JBN Media brings software and marketing together for small and growing businesses: websites and systems built around M-Pesa, plus the content and ads that bring customers to them.',
 ];
 
 const values = [
@@ -23,34 +37,24 @@ export default function About() {
         description="JBN Media is a Kenyan software and marketing company, founded by an actuarial science graduate, helping Kenyan businesses, chamas and SACCOs get found online and paid via M-Pesa."
       />
 
-      <section className="page-hero">
-        <div className="container">
-          <span className="eyebrow">About JBN Media</span>
-          <h1>Helping Kenyan businesses win online</h1>
-          <p className="lead">
-            We're a Kenyan software and marketing company. Our job is simple: get your business found online and
-            make it easy for customers to pay you.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="About JBN Media"
+        title="Helping Kenyan businesses win online"
+        lead="We're a Kenyan software and marketing company. Our job is simple: get your business found online and make it easy for customers to pay you."
+        background={<Waves lineColor="#b9dccb" accentColor="#ffb703" lightMode spacing={14} amplitude={28} speed={0.6} fade={0.4} opacity={0.8} />}
+      />
 
       <section className="section pt-0">
         <div className="container split">
           <div>
             <h2>Why we started</h2>
-            <p>
-              Too many great Kenyan businesses are invisible online. Customers search on Google, scroll Instagram and ask
-              on WhatsApp, and they end up buying from whoever shows up first.
-            </p>
-            <p>
-              At the same time, the tools that could help are often built for other markets. They don't talk to M-Pesa,
-              they're slow on a phone, or they're priced for big corporates.
-            </p>
-            <p>
-              JBN Media brings software and marketing together for small and growing businesses: websites and systems
-              built around M-Pesa, plus the content and ads that bring customers to them.
-            </p>
+            {story.map((para) => (
+              <ScrollReveal key={para.slice(0, 20)} as="p" containerClassName="story-reveal" textClassName="story-text" baseOpacity={0.15} blurStrength={3} baseRotation={0}>
+                {para}
+              </ScrollReveal>
+            ))}
           </div>
+          <Reveal>
           <div className="about-card">
             <h3>Who we work with</h3>
             <ul className="ticks">
@@ -62,32 +66,46 @@ export default function About() {
               <li><Check /> Chamas, SACCOs & community groups</li>
             </ul>
           </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="section pt-0">
         <div className="container">
           <div className="edge">
+            <Threads className="edge-threads" color={[1, 0.72, 0.01]} amplitude={1.2} distance={0.2} lineCount={40} opacity={0.35} />
             <div className="edge-copy">
               <span className="eyebrow eyebrow-light">The founder's edge</span>
-              <h2>Where actuarial science meets your business</h2>
+              <h2>
+                <DecryptedText
+                  text="Where actuarial science meets your business"
+                  animateOn="view"
+                  sequential
+                  speed={30}
+                  characters="0123456789%+−×÷=KES"
+                  encryptedClassName="decrypt-enc"
+                />
+              </h2>
               <p>
                 JBN Media was founded by an actuarial science graduate. Actuaries are trained to price risk, model interest
                 and make decisions from data, for banks, insurers and pension funds. We use that same training for
                 Kenyan businesses that can't afford to guess.
               </p>
+              <div className="edge-badge" aria-hidden="true">
+                <CircularText text="PRICE ✦ RISK ✦ INTEREST ✦ DATA ✦ " size={120} fontSize={12} spinDuration={20} color="#ffb703" />
+              </div>
             </div>
-            <ul className="edge-list">
+            <Reveal className="edge-list" stagger={0.12}>
               {edge.map((e) => (
-                <li key={e.title}>
+                <div key={e.title} className="edge-item">
                   <span className="icon-box icon-box-dark">{e.icon}</span>
                   <div>
                     <h3>{e.title}</h3>
                     <p>{e.text}</p>
                   </div>
-                </li>
+                </div>
               ))}
-            </ul>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -98,15 +116,15 @@ export default function About() {
             <span className="eyebrow">What we believe</span>
             <h2>How we work with you</h2>
           </div>
-          <div className="mini-grid">
+          <Reveal className="mini-grid" stagger={0.1}>
             {values.map((v) => (
-              <div key={v.title} className="mini">
+              <GlowCard key={v.title} className="mini" theme="light" spotlightColor="#0b6e4f" intensity={0.3}>
                 <span className="icon-box">{v.icon}</span>
                 <h3>{v.title}</h3>
                 <p>{v.text}</p>
-              </div>
+              </GlowCard>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -116,11 +134,9 @@ export default function About() {
             <span className="eyebrow">In-house + partners</span>
             <h2>A small team with a big network</h2>
           </div>
-          <p className="prose-center">
-            Our in-house team builds the software and runs content, clips and Meta ads day to day. When a project needs more, such as video
-            production, influencer campaigns or large ad budgets, we bring in specialist partner agencies and manage them
-            for you. You get agency-level reach with a single, accountable point of contact.
-          </p>
+          <ScrollReveal as="p" containerClassName="prose-center" textClassName="story-text" baseOpacity={0.15} blurStrength={3} baseRotation={0}>
+            Our in-house team builds the software and runs content, clips and Meta ads day to day. When a project needs more, such as video production, influencer campaigns or large ad budgets, we bring in specialist partner agencies and manage them for you. You get agency-level reach with a single, accountable point of contact.
+          </ScrollReveal>
         </div>
       </section>
 

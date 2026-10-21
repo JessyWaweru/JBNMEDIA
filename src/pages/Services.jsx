@@ -2,6 +2,12 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import WaButton from '../components/WaButton';
 import CtaBand from '../components/CtaBand';
+import PageHero from '../components/fx/PageHero';
+import Reveal from '../components/fx/Reveal';
+import BorderGlow from '../components/reactbits/BorderGlow';
+import ScrollVelocity from '../components/reactbits/ScrollVelocity';
+import GlowCard from '../components/fx/GlowCard';
+import Threads from '../components/reactbits/Threads';
 import { Arrow, Check, Globe, Card, Users, Megaphone, Map, Chart, Handshake, Wrench, Video, Report, Shield } from '../components/Icons';
 
 const software = [
@@ -69,20 +75,18 @@ export default function Services() {
         description="Business websites, M-Pesa integration, Chama/SACCO systems, custom software, social media management, Google Business Profile and ad campaigns for Kenyan businesses."
       />
 
-      <section className="page-hero">
-        <div className="container">
-          <span className="eyebrow">Services</span>
-          <h1>Software and marketing, under one roof</h1>
-          <p className="lead">
-            We build the digital tools your business runs on, then help customers find them. One team, one WhatsApp chat.
-          </p>
-          <nav className="pill-nav" aria-label="Jump to section">
-            <a href="#software">Software</a>
-            <a href="#marketing">Marketing</a>
-            <a href="#partners">Partner agencies</a>
-          </nav>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Services"
+        title="Software and marketing, under one roof"
+        lead="We build the digital tools your business runs on, then help customers find them. One team, one WhatsApp chat."
+        background={<Threads color={[0.04, 0.43, 0.31]} accentColor={[1, 0.72, 0.01]} amplitude={1.4} distance={0.3} lineCount={50} enableMouseInteraction opacity={0.55} />}
+      >
+        <nav className="pill-nav" aria-label="Jump to section">
+          <a href="#software">Software</a>
+          <a href="#marketing">Marketing</a>
+          <a href="#partners">Partner agencies</a>
+        </nav>
+      </PageHero>
 
       <section className="section pt-0" id="software">
         <div className="container">
@@ -90,9 +94,9 @@ export default function Services() {
             <h2>Software for your business</h2>
             <p>Built for Kenyan businesses, with M-Pesa at the centre.</p>
           </div>
-          <div className="services">
+          <Reveal className="services" stagger={0.1}>
             {software.map((s) => (
-              <article key={s.id} id={s.id} className="service">
+              <GlowCard key={s.id} id={s.id} className="service" theme="light" spotlightColor="#0b6e4f" intensity={0.3}>
                 <div className="service-top">
                   <span className="icon-box">{s.icon}</span>
                   <span className="service-price">{s.price}</span>
@@ -103,10 +107,21 @@ export default function Services() {
                   {s.points.map((p) => (<li key={p}><Check /> {p}</li>))}
                 </ul>
                 <WaButton message={s.wa} className="btn-block mt-auto">Ask about this</WaButton>
-              </article>
+              </GlowCard>
             ))}
-          </div>
+          </Reveal>
         </div>
+      </section>
+
+      <section className="velocity-band" aria-hidden="true">
+        <ScrollVelocity
+          texts={['Posts ✦ Clips ✦ Reels ✦ TikTok ✦ Google Maps ✦', 'Cost per enquiry ✦ Not likes ✦ Real results ✦']}
+          velocity={40}
+          className="velocity-text"
+          outlineAlternate
+          numCopies={4}
+          skewWithVelocity={6}
+        />
       </section>
 
       <section className="section section-tint" id="marketing">
@@ -118,15 +133,15 @@ export default function Services() {
               what we'll do next.
             </p>
           </div>
-          <div className="mini-grid mini-grid-3">
+          <Reveal className="mini-grid mini-grid-3" stagger={0.08}>
             {marketing.map((m) => (
-              <div key={m.title} className="mini">
+              <GlowCard key={m.title} className="mini" theme="light" spotlightColor="#ffb703" intensity={0.45}>
                 <span className="icon-box">{m.icon}</span>
                 <h3>{m.title}</h3>
                 <p>{m.text}</p>
-              </div>
+              </GlowCard>
             ))}
-          </div>
+          </Reveal>
           <div className="center mt-32">
             <Link to="/pricing#monthly" className="btn btn-primary">See marketing plans <Arrow /></Link>
           </div>
@@ -151,6 +166,8 @@ export default function Services() {
                 Talk about a campaign
               </WaButton>
             </div>
+            <Reveal>
+            <BorderGlow className="partner-glow" backgroundColor="#ffffff" borderRadius={18} glowColor="150 80 35" colors={['#0b6e4f', '#25d366', '#ffb703']} animated>
             <div className="partner-card">
               <span className="icon-box"><Handshake /></span>
               <ul className="ticks">
@@ -161,6 +178,8 @@ export default function Services() {
                 <li><Check /> Events & activations</li>
               </ul>
             </div>
+            </BorderGlow>
+            </Reveal>
           </div>
         </div>
       </section>
