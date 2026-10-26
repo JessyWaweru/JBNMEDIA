@@ -35,6 +35,8 @@ body {
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  /* clip, not hidden: hidden makes body a scroll container (html isn't overflow: visible), which breaks the sticky header. */
+  overflow-x: clip;
 }
 img, svg { display: block; max-width: 100%; }
 a { color: var(--brand); text-decoration: none; }
