@@ -10,7 +10,14 @@ services:
         name: Cache-Control
         value: public, max-age=31536000, immutable
     routes:
-      # Send every clean URL (/pricing, /contact, ...) to the React app
+      # Pages with their own link-preview tags (written at build time by vite.config.js)
+      - type: rewrite
+        source: /work/goherbal
+        destination: /work/goherbal/index.html
+      - type: rewrite
+        source: /partners
+        destination: /partners/index.html
+      # Send every other clean URL (/pricing, /contact, ...) to the React app
       - type: rewrite
         source: /*
         destination: /index.html

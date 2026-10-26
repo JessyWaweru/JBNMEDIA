@@ -3,6 +3,7 @@ import Seo from '../components/Seo';
 import WaButton from '../components/WaButton';
 import PlanCard from '../components/PlanCard';
 import CtaBand from '../components/CtaBand';
+import CaseStudyTeaser from '../components/CaseStudyTeaser';
 import Faq from '../components/Faq';
 import { monthlyPlans, projects, faqs } from '../data/plans';
 import Aurora from '../components/reactbits/Aurora';
@@ -255,6 +256,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <CaseStudyTeaser />
 
       <section className="section section-tint">
         <div className="container">

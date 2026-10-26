@@ -3,6 +3,8 @@
   <url><loc>https://jbnmedia.org/</loc><priority>1.0</priority></url>
   <url><loc>https://jbnmedia.org/pricing</loc><priority>0.9</priority></url>
   <url><loc>https://jbnmedia.org/services</loc><priority>0.8</priority></url>
+  <url><loc>https://jbnmedia.org/work/goherbal</loc><priority>0.8</priority></url>
+  <url><loc>https://jbnmedia.org/partners</loc><priority>0.6</priority></url>
   <url><loc>https://jbnmedia.org/about</loc><priority>0.6</priority></url>
   <url><loc>https://jbnmedia.org/contact</loc><priority>0.7</priority></url>
   <url><loc>https://jbnmedia.org/privacy</loc><priority>0.2</priority></url>

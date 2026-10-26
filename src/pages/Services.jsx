@@ -2,12 +2,14 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import WaButton from '../components/WaButton';
 import CtaBand from '../components/CtaBand';
+import CaseStudyTeaser from '../components/CaseStudyTeaser';
 import PageHero from '../components/fx/PageHero';
 import Reveal from '../components/fx/Reveal';
 import BorderGlow from '../components/reactbits/BorderGlow';
 import ScrollVelocity from '../components/reactbits/ScrollVelocity';
 import GlowCard from '../components/fx/GlowCard';
 import Threads from '../components/reactbits/Threads';
+import { MPESA, goherbal } from '../data/work';
 import { Arrow, Check, Globe, Card, Users, Megaphone, Map, Chart, Handshake, Wrench, Video, Report, Shield } from '../components/Icons';
 
 const software = [
@@ -23,11 +25,18 @@ const software = [
   {
     id: 'mpesa',
     icon: <Card />,
-    title: 'M-Pesa integration',
+    title: `Take ${MPESA} on your site`,
     price: 'from KES 12,000',
-    text: 'Already have a website, online shop or app? We connect it to M-Pesa so customers can pay in a few taps and you get instant confirmation.',
-    points: ['STK Push, Till (Buy Goods) or Paybill', 'Automatic payment confirmations', 'Payment records you can download', 'Ready in about 1 week'],
-    wa: "Hi, I'm interested in adding M-Pesa to my website or app",
+    text: "We add M-Pesa and card payments to the website you already have, or build you a shop around them, like GoHerbal's.",
+    points: [
+      'Customers pay with a PIN prompt on their own phone',
+      'You get confirmed, paid orders instead of chasing screenshots',
+      'Delivery fees, receipts and order tracking set up for how you actually sell',
+      'STK Push, Till (Buy Goods), Paybill or card',
+      'Ready in about 1 week',
+    ],
+    wa: "Hi JBN Media, I'd like M-Pesa payments on my site",
+    caseStudy: goherbal.path,
   },
   {
     id: 'chama',
@@ -106,12 +115,17 @@ export default function Services() {
                 <ul className="ticks">
                   {s.points.map((p) => (<li key={p}><Check /> {p}</li>))}
                 </ul>
+                {s.caseStudy && (
+                  <Link to={s.caseStudy} className="text-link service-case">See the GoHerbal case study <Arrow /></Link>
+                )}
                 <WaButton message={s.wa} className="btn-block mt-auto">Ask about this</WaButton>
               </GlowCard>
             ))}
           </Reveal>
         </div>
       </section>
+
+      <CaseStudyTeaser />
 
       <section className="velocity-band" aria-hidden="true">
         <ScrollVelocity

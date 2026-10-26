@@ -16,7 +16,7 @@ export const SITE = {
 };
 
 export const waLink = (message = "Hi JBN Media, I'd like to know more about your services.") =>
-  `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message)}`;
+  `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message).replace(/'/g, '%27')}`;
 
 export const telLink = () => `tel:${SITE.phone}`;
 

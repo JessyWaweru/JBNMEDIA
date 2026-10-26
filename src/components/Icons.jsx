@@ -27,3 +27,9 @@ export const Code = () => (<svg {...base}><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 
 export const Call = () => (<svg {...base}><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z" /></svg>);
 export const Video = () => (<svg {...base}><rect x="2" y="6" width="14" height="12" rx="2" /><path d="m16 10 6-3v10l-6-3" /></svg>);
 export const Report = () => (<svg {...base}><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Z" /><path d="M14 3v6h6M8 17v-3M12 17v-5M16 17v-2" /></svg>);
+export const Basket = () => (<svg {...base}><path d="M5 10h14l-1.5 9a2 2 0 0 1-2 1.7h-7a2 2 0 0 1-2-1.7L5 10ZM3 10h18M9 10l3-6 3 6M10 14v3M14 14v3" /></svg>);
+export const Truck = () => (<svg {...base}><path d="M2 6h11v10H2zM13 10h4l3 3v3h-7" /><circle cx="6" cy="18" r="2" /><circle cx="17" cy="18" r="2" /></svg>);
+export const Refresh = () => (<svg {...base}><path d="M20 11a8 8 0 0 0-14.6-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.6 4.5L20 16M20 20v-4h-4" /></svg>);
+export const Route = () => (<svg {...base}><circle cx="6" cy="19" r="2.5" /><circle cx="18" cy="5" r="2.5" /><path d="M8.5 19H17a3.5 3.5 0 0 0 0-7H7a3.5 3.5 0 0 1 0-7h8.5" /></svg>);
+export const Play = () => (<svg {...base} width={18} height={18} fill="currentColor" stroke="none"><path d="M7 4.5v15l13-7.5-13-7.5Z" /></svg>);
+export const Pause = () => (<svg {...base} width={18} height={18} fill="currentColor" stroke="none"><rect x="5.5" y="4" width="4.5" height="16" rx="1" /><rect x="14" y="4" width="4.5" height="16" rx="1" /></svg>);

@@ -3,6 +3,7 @@ import Logo from './Logo';
 import CurvedLoop from './reactbits/CurvedLoop';
 import ShinyText from './reactbits/ShinyText';
 import { SITE, waLink, telLink, mailLink } from '../config';
+import { goherbal, revenueFigure } from '../data/work';
 
 export default function Footer() {
   return (
@@ -39,6 +40,9 @@ export default function Footer() {
           <h4>Company</h4>
           <ul>
             <li><Link to="/pricing">Pricing</Link></li>
+            <li><Link to="/partners">Partners</Link></li>
+            <li><Link to={goherbal.path}>Case study: GoHerbal</Link></li>
+            {revenueFigure !== null && <li><Link to="/results">Results</Link></li>}
             <li><Link to="/about">About us</Link></li>
             <li><Link to="/contact">Contact</Link></li>
             <li><Link to="/privacy">Privacy policy</Link></li>
