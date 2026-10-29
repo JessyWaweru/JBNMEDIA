@@ -15,7 +15,7 @@ export default function Results() {
     <>
       <Seo
         title="Results"
-        description="Revenue paid through the checkouts and payment systems JBN Media has built for Kenyan businesses."
+        description={`Over KES ${figure.toLocaleString('en-KE')} and counting paid through the checkouts and payment systems JBN Media has built for Kenyan businesses.`}
       />
 
       <PageHero
@@ -33,7 +33,11 @@ export default function Results() {
               <p className="results-figure">
                 <span className="results-currency">KES</span>
                 <CountUp to={figure} separator="," duration={1.6} />
+                {revenue.growing && <span className="results-plus">+</span>}
               </p>
+              {revenue.growing && (
+                <p className="results-live"><span className="live-dot" aria-hidden="true" /> and counting</p>
+              )}
               <p className="results-label">
                 paid by customers through sites and systems we&rsquo;ve built{revenue.asOf ? `, as of ${revenue.asOf}` : ''}
               </p>

@@ -11,7 +11,24 @@ function setMeta(selector, attr, value) {
 
 // Keeps tags right for in-app navigation. Link-preview crawlers don't run JavaScript, so pages
 // that need their own preview also get static HTML at build time (see vite.config.js).
-export default function Seo({ title, description, image = DEFAULT_IMAGE }) {
+// Page-level structured data (e.g. an FAQ), alongside the site-wide graph that's always in index.html.
+// The build bakes the same tag into the pages listed in vite.config.js; this replaces it, never duplicates it.
+function setJsonLd(data) {
+  let el = document.head.querySelector('script[data-page-ld]');
+  if (!data) {
+    el?.remove();
+    return;
+  }
+  if (!el) {
+    el = document.createElement('script');
+    el.type = 'application/ld+json';
+    el.dataset.pageLd = '';
+    document.head.appendChild(el);
+  }
+  el.textContent = JSON.stringify({ '@context': 'https://schema.org', ...data });
+}
+
+export default function Seo({ title, description, image = DEFAULT_IMAGE, jsonLd }) {
   const { pathname } = useLocation();
   useEffect(() => {
     const fullTitle = title ? `${title} | JBN Media` : 'JBN Media | Websites, M-Pesa & Marketing for Kenyan Businesses';
@@ -27,6 +44,7 @@ export default function Seo({ title, description, image = DEFAULT_IMAGE }) {
     setMeta('meta[property="og:image:width"]', 'content', String(image.width));
     setMeta('meta[property="og:image:height"]', 'content', String(image.height));
     setMeta('link[rel="canonical"]', 'href', url);
-  }, [title, description, pathname, image.src, image.width, image.height]);
+    setJsonLd(jsonLd);
+  }, [title, description, pathname, image.src, image.width, image.height, jsonLd]);
   return null;
 }

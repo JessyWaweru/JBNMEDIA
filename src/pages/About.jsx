@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import Faq from '../components/Faq';
 import CtaBand from '../components/CtaBand';
 import PageHero from '../components/fx/PageHero';
 import Reveal from '../components/fx/Reveal';
@@ -8,6 +9,7 @@ import ScrollReveal from '../components/reactbits/ScrollReveal';
 import GlowCard from '../components/fx/GlowCard';
 import Threads from '../components/reactbits/Threads';
 import Waves from '../components/reactbits/Waves';
+import { FOUNDER, companyFaqs, faqJsonLd } from '../data/company';
 import { Check, Phone, Card, Shield, Handshake, Users, Chart } from '../components/Icons';
 
 const edge = [
@@ -29,12 +31,15 @@ const values = [
   { icon: <Handshake />, title: 'Partners, not vendors', text: 'We are measured by whether your business grows, not by how many features we ship.' },
 ];
 
+const FAQ_LD = faqJsonLd();
+
 export default function About() {
   return (
     <>
       <Seo
         title="About us"
-        description="JBN Media is a Kenyan software and marketing company, founded by an actuarial science graduate, helping Kenyan businesses, chamas and SACCOs get found online and paid via M-Pesa."
+        description={`JBN Media is a Kenyan software and marketing company founded by ${FOUNDER.name} (${FOUNDER.role}), helping Kenyan businesses, chamas and SACCOs get found online and paid via M-Pesa.`}
+        jsonLd={FAQ_LD}
       />
 
       <PageHero
@@ -86,8 +91,12 @@ export default function About() {
                   encryptedClassName="decrypt-enc"
                 />
               </h2>
+              <p className="founder-line">
+                <b>{FOUNDER.name}</b>
+                <span>{FOUNDER.role}</span>
+              </p>
               <p>
-                JBN Media was founded by an actuarial science graduate. Actuaries are trained to price risk, model interest
+                JBN Media was founded by {FOUNDER.name}, an actuarial science graduate. Actuaries are trained to price risk, model interest
                 and make decisions from data, for banks, insurers and pension funds. We use that same training for
                 Kenyan businesses that can't afford to guess.
               </p>
@@ -137,6 +146,16 @@ export default function About() {
           <ScrollReveal as="p" containerClassName="prose-center" textClassName="story-text" baseOpacity={0.15} blurStrength={3} baseRotation={0}>
             Our in-house team builds the software and runs content, clips and Meta ads day to day. When a project needs more, such as video production, influencer campaigns or large ad budgets, we bring in specialist partner agencies and manage them for you. You get agency-level reach with a single, accountable point of contact.
           </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="section section-tint">
+        <div className="container narrow">
+          <div className="section-head">
+            <span className="eyebrow">Quick answers</span>
+            <h2>About JBN Media in brief</h2>
+          </div>
+          <Faq items={companyFaqs} />
         </div>
       </section>
 

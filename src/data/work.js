@@ -40,13 +40,21 @@ export const partners = [
   { name: 'Sample Welfare Chama', sector: 'Chama', location: 'Nakuru', work: 'Contribution and loan tracking with member statements.', placeholder: true },
 ];
 
+// Partner companies we team up with (not clients). Shown as the "Partner network" on /partners
+// and the home page. Add `url`/`urlDisplay` and a `blurb` once each partner signs off on the wording.
+export const allies = [
+  { name: 'ShopCrawl', tag: 'Strategic partner' },
+  { name: 'DocRank', tag: 'Strategic partner' },
+];
+
 // Total KES paid through checkouts and systems we've built for clients.
 // Leave `kes` as null until you have the real figure. While it's null, /results shows `sample`
 // in `npm run dev` only, and on the live site the page is a 404 and its links are hidden.
 export const revenue = {
-  kes: null,
+  kes: 217000,
   sample: 1250000,
-  asOf: null, // e.g. 'October 2026'
+  asOf: 'October 2026',
+  growing: true, // adds "and counting" to the figure
 };
 
 // Placeholders show only in `npm run dev`. (`?.` because vite.config.js imports this file outside Vite.)

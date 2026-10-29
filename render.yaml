@@ -17,6 +17,12 @@ services:
       - type: rewrite
         source: /partners
         destination: /partners/index.html
+      - type: rewrite
+        source: /about
+        destination: /about/index.html
+      - type: rewrite
+        source: /results
+        destination: /results/index.html
       # Send every other clean URL (/pricing, /contact, ...) to the React app
       - type: rewrite
         source: /*

@@ -638,3 +638,53 @@ html { overflow-x: clip; }
 }
 .results-currency { font-size: 0.4em; color: var(--brand); letter-spacing: 0; }
 .results-label { color: var(--muted); font-size: 1.1rem; }
+.results-plus { color: var(--gold); }
+.results-live { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 6px; font-weight: 700; color: var(--brand); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; }
+.live-dot { position: relative; width: 10px; height: 10px; border-radius: 50%; background: var(--wa); }
+.live-dot::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: var(--wa); animation: live-ping 1.6s ease-out infinite; }
+@keyframes live-ping { to { transform: scale(2.6); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .live-dot::after { animation: none; } }
+
+/* ── Partner network ────────────────────────────── */
+.alliance {
+  position: relative; overflow: hidden; display: grid; gap: 28px; padding: 32px 20px; border-radius: 24px; margin-bottom: 56px;
+  background: radial-gradient(120% 90% at 50% 0%, #143a2c 0%, var(--ink) 60%); color: rgba(255, 255, 255, 0.75);
+}
+.alliance-head { text-align: center; max-width: 560px; margin: 0 auto; }
+.alliance-head h2 { color: #fff; margin: 10px 0 8px; }
+.alliance-head p { margin: 0; }
+.alliance-map { display: flex; flex-direction: column; align-items: center; gap: 0; }
+.alliance-node { width: 100%; max-width: 300px; }
+.ally, .ally-link { display: flex; align-items: center; gap: 14px; padding: 18px 20px; color: inherit; text-decoration: none; }
+.ally-link { padding: 0; }
+.ally-mark {
+  flex: none; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 14px;
+  background: linear-gradient(135deg, var(--gold), #ff8a00); color: var(--ink); font-weight: 800; letter-spacing: 0.02em;
+}
+.ally-name { color: #fff; font-size: 1.15rem; margin: 0 0 2px; }
+.ally-tag { margin: 0; font-size: 0.85rem; font-weight: 600; color: var(--gold); }
+.ally-blurb { margin: 6px 0 0; font-size: 0.9rem; }
+.alliance-hub {
+  display: grid; place-items: center; width: 84px; height: 84px; border-radius: 50%; font-weight: 800; color: #fff; letter-spacing: 0.04em;
+  background: var(--brand); box-shadow: 0 0 0 6px rgba(37, 211, 102, 0.15), 0 0 40px rgba(37, 211, 102, 0.45);
+}
+/* Data flowing between the partners and us. */
+.alliance-link {
+  width: 2px; height: 36px;
+  background: repeating-linear-gradient(to bottom, var(--gold) 0 6px, transparent 6px 12px);
+  background-size: 100% 24px; animation: alliance-flow-y 0.8s linear infinite;
+}
+@keyframes alliance-flow-y { to { background-position: 0 24px; } }
+@keyframes alliance-flow-x { to { background-position: 24px 0; } }
+@media (min-width: 820px) {
+  .alliance { padding: 56px; }
+  .alliance-map { flex-direction: row; justify-content: center; }
+  .alliance-node { flex: 1; }
+  .alliance-link {
+    width: auto; height: 2px; flex: 0 1 64px;
+    background: repeating-linear-gradient(to right, var(--gold) 0 6px, transparent 6px 12px);
+    background-size: 24px 100%; animation-name: alliance-flow-x;
+  }
+}
+@media (prefers-reduced-motion: reduce) { .alliance-link { animation: none; } }
+.partners-clients-head { margin-bottom: 24px; }
