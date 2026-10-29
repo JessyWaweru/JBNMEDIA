@@ -8,21 +8,25 @@ import ElectricBorder from '../components/reactbits/ElectricBorder';
 import GradientText from '../components/reactbits/GradientText';
 import Waves from '../components/reactbits/Waves';
 import { Arrow } from '../components/Icons';
+import { allyLogos } from '../components/AllyLogos';
 import { allies, visiblePartners as visible } from '../data/work';
 
 const initials = (name) => name.split(/\s+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
-// One-word names like "ShopCrawl" take their capitals: "SC".
-const allyMark = (name) => (name.match(/[A-Z]/g) || [name[0]]).slice(0, 2).join('');
-
 function AllyNode({ ally }) {
+  const Logo = allyLogos[ally.logo];
   const inner = (
     <div className="ally">
-      <span className="ally-mark" aria-hidden="true">{allyMark(ally.name)}</span>
-      <div>
-        <h3 className="ally-name">{ally.name}</h3>
-        <p className="ally-tag">{ally.tag}</p>
-        {ally.blurb && <p className="ally-blurb">{ally.blurb}</p>}
+      <div className="ally-top">
+        {Logo && <Logo />}
+        <div>
+          <h3 className="ally-name">{ally.name}</h3>
+          <p className="ally-tag">{ally.tag}</p>
+        </div>
       </div>
+      {ally.blurb && <p className="ally-blurb">{ally.blurb}</p>}
+      {ally.together && (
+        <p className="ally-together"><b>With JBN Media:</b> {ally.together}</p>
+      )}
     </div>
   );
   return (

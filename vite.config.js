@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { SITE } from './src/config.js';
 import { allies, goherbal, revenue } from './src/data/work.js';
-import { FOUNDER, companyFaqs, faqJsonLd, goherbalJsonLd, siteJsonLd } from './src/data/company.js';
+import { FOUNDER, companyFaqs, lowerFirst, faqJsonLd, goherbalJsonLd, siteJsonLd } from './src/data/company.js';
 
 // Link-preview crawlers (WhatsApp, Facebook, X, LinkedIn) don't run JavaScript, so they only see the
 // tags in the HTML file. For pages that need their own preview, write a copy of index.html with
@@ -58,7 +58,7 @@ function llmsTxt() {
     '## Key facts',
     `- Founder and CEO: ${FOUNDER.name}`,
     ...(revenue.kes ? [`- Revenue paid through systems JBN Media built: over KES ${revenue.kes.toLocaleString('en-KE')} and counting${revenue.asOf ? ` (as of ${revenue.asOf})` : ''}`] : []),
-    `- Partners: ${allies.map((a) => a.name).join(', ')}`,
+    ...allies.map((a) => `- Partner: ${a.name}, ${lowerFirst(a.tag)}. ${a.name} is ${lowerFirst(a.blurb)}`),
     `- Built ${goherbal.name} (${goherbal.url}), an online herbal shop with M-Pesa and card checkout`,
     `- Contact: ${SITE.email}, WhatsApp ${SITE.whatsappDisplay}`,
     '',

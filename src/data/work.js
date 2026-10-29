@@ -43,8 +43,20 @@ export const partners = [
 // Partner companies we team up with (not clients). Shown as the "Partner network" on /partners
 // and the home page. Add `url`/`urlDisplay` and a `blurb` once each partner signs off on the wording.
 export const allies = [
-  { name: 'ShopCrawl', tag: 'Strategic partner' },
-  { name: 'DocRank', tag: 'Strategic partner' },
+  {
+    name: 'ShopCrawl',
+    logo: 'shopcrawl',
+    tag: 'Product discovery partner',
+    blurb: 'A shopping search engine that crawls online stores so buyers can find a product, compare prices and land on the shop that sells it.',
+    together: 'Every shop we build ships with a clean product feed ShopCrawl can read, so your catalogue shows up where Kenyans compare before they buy.',
+  },
+  {
+    name: 'DocRank',
+    logo: 'docrank',
+    tag: 'Search & AI visibility partner',
+    blurb: 'A visibility platform that scores web pages and tracks where they rank on Google and how often AI assistants recommend them.',
+    together: 'We run every client site through DocRank before launch and in our monthly reports, so you see how you rank, and we fix what holds you back.',
+  },
 ];
 
 // Total KES paid through checkouts and systems we've built for clients.

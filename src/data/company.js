@@ -8,6 +8,8 @@ export const FOUNDER = {
   role: 'Founder & CEO',
 };
 
+export const lowerFirst = (s) => s[0].toLowerCase() + s.slice(1);
+
 const kes = (n) => `KES ${n.toLocaleString('en-KE')}`;
 
 export const companyFaqs = [
@@ -35,7 +37,7 @@ export const companyFaqs = [
   },
   {
     q: 'Who are JBN Media’s partners?',
-    a: `JBN Media partners with ${allies.map((a) => a.name).join(' and ')}, and works with Kenyan businesses such as GoHerbal.`,
+    a: `JBN Media partners with ${allies.map((a) => `${a.name}, its ${lowerFirst(a.tag)}`).join(', and ')}. ${allies.map((a) => `${a.name} is ${lowerFirst(a.blurb)}`).join(' ')}`,
   },
 ];
 
@@ -64,7 +66,7 @@ export function siteJsonLd() {
         founder: { '@id': FOUNDER_ID },
         employee: { '@id': FOUNDER_ID },
         knowsAbout: ['Web development', 'M-Pesa integration', 'Daraja API', 'E-commerce', 'Chama and SACCO software', 'Social media marketing'],
-        member: allies.map((a) => ({ '@type': 'Organization', name: a.name, ...(a.url ? { url: a.url } : {}) })),
+        member: allies.map((a) => ({ '@type': 'Organization', name: a.name, description: a.blurb, ...(a.url ? { url: a.url } : {}) })),
       },
       {
         '@type': 'Person',
