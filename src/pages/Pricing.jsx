@@ -24,7 +24,7 @@ export default function Pricing() {
     <>
       <Seo
         title="Pricing"
-        description="JBN Media pricing: WhatsApp AI assistant KES 30,000 setup + KES 6,000/month, website AI chat KES 15,000 + KES 3,000/month, websites from KES 25,000, M-Pesa payments from KES 12,000, Chama/SACCO systems from KES 40,000."
+        description="JBN Media pricing: WhatsApp AI assistant KES 30,000 setup + KES 6,000/month, website AI chat KES 15,000 + KES 3,000/month, landing pages from KES 10,000, business websites from KES 25,000, M-Pesa payments from KES 12,000, Chama/SACCO systems from KES 40,000."
       />
 
       <PageHero
@@ -83,7 +83,7 @@ export default function Pricing() {
             <h2>Websites & business systems</h2>
             <p>One-off projects. You own what we build. 50% deposit to start, balance on handover.</p>
           </div>
-          <Reveal className="plans plans-2" stagger={0.1}>
+          <Reveal className="plans plans-3" stagger={0.1}>
             {projects.map((p) => <PlanCard key={p.id} plan={p} />)}
           </Reveal>
         </div>

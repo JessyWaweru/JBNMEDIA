@@ -20,11 +20,11 @@ const software = [
   {
     id: 'websites',
     icon: <Globe />,
-    title: 'Business websites',
-    price: 'from KES 25,000',
-    text: `A fast, professional website on your own domain that works perfectly on phones and sends customers straight to your WhatsApp. Add ${MPESA} payments or an AI chat whenever you are ready.`,
-    points: ['Up to 5 pages, mobile-friendly', 'Your own domain', 'WhatsApp button and enquiry form', `Optional ${MPESA} payments (from KES 12,000)`, 'Optional AI chat on your site', 'Ready in 2 to 3 weeks'],
-    wa: "Hi, I'm interested in a Business Website (from KES 25,000)",
+    title: 'Landing pages and business websites',
+    price: 'from KES 10,000',
+    text: `Start with a one-page landing page from KES 10,000, or get a full business website from KES 25,000 on your own domain. Both work perfectly on phones and send customers straight to your WhatsApp. Add ${MPESA} payments or an AI chat whenever you are ready.`,
+    points: ['Landing page: one page, from KES 10,000', 'Business website: up to 5 pages, from KES 25,000', 'WhatsApp button and enquiry form', `Optional ${MPESA} payments (from KES 12,000)`, 'Optional AI chat on your site', 'Business website ready in 2 to 3 weeks'],
+    wa: "Hi, I'm interested in a landing page (from KES 10,000) or a business website (from KES 25,000)",
   },
   {
     id: 'mpesa',

@@ -51,6 +51,22 @@ export const monthlyPlans = [
 
 export const projects = [
   {
+    id: 'landing-page',
+    name: 'Landing Page',
+    from: true,
+    price: '10,000',
+    unit: 'one-off',
+    badge: 'Start small',
+    blurb: 'One page that tells customers what you sell and gets them messaging you.',
+    features: [
+      'A single page: what you sell, your prices and how to reach you',
+      'Works well on phones',
+      'WhatsApp button so customers message you straight away',
+      'Upgrade to a full Business Website anytime',
+    ],
+    wa: "Hi, I'm interested in a Landing Page (from KES 10,000)",
+  },
+  {
     id: 'website',
     name: 'Business Website',
     from: true,
@@ -181,7 +197,7 @@ export const aiFaqs = [
   },
   {
     q: 'How much does it cost each month?',
-    a: 'The WhatsApp AI assistant is KES 6,000 a month after a one-time setup of KES 30,000, and includes a weekly summary of what your customers asked. The website chat is KES 3,000 a month after a one-time setup of KES 15,000.',
+    a: 'The WhatsApp AI assistant is KES 6,000 a month after a one-time setup of KES 30,000, and includes a weekly summary of what your customers asked. The monthly fee also covers WhatsApp’s own message charges for normal use, up to about 1,000 customer messages a month. If you go above that, we warn you first and bill the extra at cost. The website chat is KES 3,000 a month after a one-time setup of KES 15,000.',
   },
   {
     q: "What happens when it doesn't know an answer?",

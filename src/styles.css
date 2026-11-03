@@ -731,6 +731,8 @@ html { overflow-x: clip; }
 .offer-lead .offer-text { color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; max-width: 560px; }
 .offer-lead .ticks svg { color: var(--gold); }
 .offer-lead .ticks li { color: #fff; }
+.offer-lead .offer-note { margin: 0 0 16px; color: rgba(255, 255, 255, 0.85); font-weight: 600; align-items: flex-start; }
+.offer-lead .offer-note svg { color: var(--gold); margin-top: 3px; }
 .offer-lead .offer-prices { border-color: rgba(255, 255, 255, 0.25); }
 .offer-lead .offer-prices dt { color: rgba(255, 255, 255, 0.8); }
 .offer-lead .offer-prices dd { color: var(--gold); font-size: 1.5rem; letter-spacing: -0.02em; }
@@ -739,6 +741,7 @@ html { overflow-x: clip; }
   .offer-lead.spotlight-card { flex-direction: row; align-items: flex-end; gap: 48px; padding: 36px 40px; }
   .offer-lead .offer-main { flex: 1.5; }
   .offer-lead .offer-ticks-list { grid-template-columns: 1fr 1fr; column-gap: 24px; margin: 0; }
+  .offer-lead .offer-note { margin: 16px 0 0; }
   .offer-lead .offer-side { flex: 1; margin: 0; }
 }
 

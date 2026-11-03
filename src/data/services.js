@@ -24,6 +24,7 @@ export const services = [
       { label: 'One-time setup', amount: 'KES 30,000' },
       { label: 'Every month', amount: 'KES 6,000' },
     ],
+    note: 'WhatsApp message fees included for up to about 1,000 customer messages a month.',
     wa: "Hi JBN Media, I'd like a WhatsApp AI assistant for my business (KES 30,000 setup + KES 6,000/month).",
   },
   {
@@ -52,9 +53,10 @@ export const services = [
     id: 'websites',
     icon: 'globe',
     title: `Websites, ${MPESA} payments and chama systems`,
-    text: `A website that sends customers to your WhatsApp, ${MPESA} payments on the site you already have, or a system that tracks your chama’s contributions and loans.`,
+    text: `A one-page landing page or a full website that sends customers to your WhatsApp, ${MPESA} payments on the site you already have, or a system that tracks your chama’s contributions and loans.`,
     prices: [
-      { label: 'Website', amount: 'from KES 25,000' },
+      { label: 'Landing page', amount: 'from KES 10,000' },
+      { label: 'Business website', amount: 'from KES 25,000' },
       { label: `${MPESA} payments on your site`, amount: 'KES 12,000' },
       { label: 'Chama management system', amount: 'KES 40,000' },
     ],
@@ -68,8 +70,11 @@ export const services = [
     title: 'Document and statement automation',
     text: `Stop typing receipts into a spreadsheet. We pull the numbers from your receipts, invoices or ${MPESA} statements into a sheet or dashboard.`,
     points: [`Receipts, invoices and ${MPESA} statements`, 'Into a sheet or dashboard you can read at a glance'],
-    prices: [{ label: 'Price', amount: 'from KES 25,000' }],
-    wa: "Hi JBN Media, I'd like to automate my receipts, invoices or M-Pesa statements (from KES 25,000).",
+    prices: [
+      { label: 'One-time setup', amount: 'from KES 25,000' },
+      { label: 'Monthly runs (optional)', amount: 'KES 3,000' },
+    ],
+    wa: "Hi JBN Media, I'd like to automate my receipts, invoices or M-Pesa statements (from KES 25,000 setup).",
   },
   {
     id: 'clips',

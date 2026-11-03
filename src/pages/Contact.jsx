@@ -17,6 +17,7 @@ const services = [
   'Online Presence plan (KES 8,000/month)',
   'Growth plan (KES 15,000/month)',
   'Content Clips (from KES 6,000/month)',
+  'Landing Page',
   'Business Website',
   'M-Pesa Integration',
   'Chama / SACCO System',
