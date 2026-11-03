@@ -25,9 +25,9 @@ export default function Terms() {
             <li>Advertising spend is not included and is paid directly to the ad platform.</li>
           </ul>
           <h2>Payments</h2>
-          <p>Payments are made via M-Pesa. Work may be paused if a payment is overdue.</p>
+          <p>Payments are made via M‑Pesa. Work may be paused if a payment is overdue.</p>
           <h2>Third-party services</h2>
-          <p>Our work may rely on services such as Safaricom M-Pesa, Meta (Facebook, Instagram, WhatsApp), Google and hosting providers. We are not responsible for outages or policy changes on those platforms, but we will help you work around them.</p>
+          <p>Our work may rely on services such as Safaricom M‑Pesa, Meta (Facebook, Instagram, WhatsApp), Google and hosting providers. We are not responsible for outages or policy changes on those platforms, but we will help you work around them.</p>
           <h2>Results</h2>
           <p>We work hard to grow your reach and enquiries, but we cannot guarantee specific sales results.</p>
           <h2>Contact</h2>

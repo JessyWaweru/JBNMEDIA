@@ -5,6 +5,11 @@ import react from '@vitejs/plugin-react';
 import { SITE } from './src/config.js';
 import { allies, goherbal, revenue } from './src/data/work.js';
 import { FOUNDER, companyFaqs, lowerFirst, faqJsonLd, goherbalJsonLd, siteJsonLd } from './src/data/company.js';
+import { aiFaqs } from './src/data/plans.js';
+import { services } from './src/data/services.js';
+
+// Page copy uses a non-breaking hyphen in "M-Pesa"; plain text files and meta tags get the normal one.
+const plain = (s) => s.replace(/\u2011/g, '-');
 
 // Link-preview crawlers (WhatsApp, Facebook, X, LinkedIn) don't run JavaScript, so they only see the
 // tags in the HTML file. For pages that need their own preview, write a copy of index.html with
@@ -15,13 +20,13 @@ const previews = [
     title: `${goherbal.seoTitle} | JBN Media`,
     description: goherbal.seoDescription,
     type: 'article',
-    image: { src: goherbal.poster, ...goherbal.posterSize },
+    image: { src: goherbal.poster, ...goherbal.posterSize, alt: goherbal.posterAlt },
     jsonLd: goherbalJsonLd(),
   },
   {
     route: '/about',
     title: 'About us | JBN Media',
-    description: `JBN Media is a Kenyan software and marketing company founded by ${FOUNDER.name} (${FOUNDER.role}), helping Kenyan businesses, chamas and SACCOs get found online and paid via M-Pesa.`,
+    description: `JBN Media is a Kenyan AI agency founded by ${FOUNDER.name} (${FOUNDER.role}), building AI assistants, websites and M-Pesa payments for Kenyan businesses, chamas and SACCOs.`,
     jsonLd: faqJsonLd(),
   },
   {
@@ -32,7 +37,7 @@ const previews = [
   {
     route: '/partners',
     title: 'Our partners | JBN Media',
-    description: "JBN Media's partner network, including ShopCrawl and DocRank, and the Kenyan businesses we build websites, M-Pesa payments and marketing for, like GoHerbal.",
+    description: "JBN Media's partner network, including ShopCrawl and DocRank, and the Kenyan businesses we build AI assistants, websites and M-Pesa payments for, like GoHerbal.",
   },
 ];
 
@@ -53,7 +58,10 @@ function llmsTxt() {
   return [
     `# ${SITE.name}`,
     '',
-    `> ${SITE.name} is a Kenyan software and marketing company founded by ${FOUNDER.name}, its ${FOUNDER.role}. It builds websites, M-Pesa payment integrations and Chama/SACCO systems, and runs social media marketing for Kenyan businesses.`,
+    `> ${SITE.name} is a Kenyan AI agency founded by ${FOUNDER.name}, its ${FOUNDER.role}. It builds WhatsApp and website AI assistants that answer customers and take M-Pesa orders, plus websites, M-Pesa payments, Chama/SACCO systems, document automation and marketing for Kenyan businesses.`,
+    '',
+    '## Services and prices (KES)',
+    ...services.map((s) => plain(`- ${s.title}: ${s.prices.map((p) => `${p.label} ${p.amount}`).join('; ')}${s.note ? `. ${s.note}` : ''}`)),
     '',
     '## Key facts',
     `- Founder and CEO: ${FOUNDER.name}`,
@@ -63,10 +71,10 @@ function llmsTxt() {
     `- Contact: ${SITE.email}, WhatsApp ${SITE.whatsappDisplay}`,
     '',
     '## Common questions',
-    ...companyFaqs.flatMap((f) => [`### ${f.q}`, f.a, '']),
+    ...[...companyFaqs, ...aiFaqs].flatMap((f) => [`### ${f.q}`, f.a, '']),
     '## Pages',
     page('Pricing', '/pricing', 'Published package prices in KES'),
-    page('Services', '/services', 'Websites, M-Pesa, Chama/SACCO systems and marketing'),
+    page('Services', '/services', 'WhatsApp and website AI assistants, websites, M-Pesa payments, Chama/SACCO systems, document automation and marketing'),
     page('GoHerbal case study', goherbal.path, goherbal.seoDescription),
     page('Partners', '/partners', 'Partner network and clients'),
     page('Results', '/results', 'Revenue paid through systems we built'),
@@ -104,6 +112,7 @@ function previewPages() {
           html = setTag(html, 'property', 'og:image', `${SITE.url}${p.image.src}`);
           html = setTag(html, 'property', 'og:image:width', String(p.image.width));
           html = setTag(html, 'property', 'og:image:height', String(p.image.height));
+          html = setTag(html, 'property', 'og:image:alt', p.image.alt);
         }
         if (p.jsonLd) html = html.replace('</head>', `    ${ldScript({ '@context': 'https://schema.org', ...p.jsonLd }, ' data-page-ld')}\n  </head>`);
         const out = path.join(dist, p.route, 'index.html');

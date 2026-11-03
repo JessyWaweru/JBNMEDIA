@@ -2,13 +2,14 @@ import WaButton from './WaButton';
 import CountUp from './reactbits/CountUp';
 import ElectricBorder from './reactbits/ElectricBorder';
 import { Check } from './Icons';
+import { keepMpesa } from '../data/work';
 
 export default function PlanCard({ plan }) {
   const card = (
     <article className={`plan ${plan.featured ? 'plan-featured' : ''}`} id={plan.id}>
       {plan.badge && <span className="plan-badge">{plan.badge}</span>}
-      <h3 className="plan-name">{plan.name}</h3>
-      <p className="plan-blurb">{plan.blurb}</p>
+      <h3 className="plan-name">{keepMpesa(plan.name)}</h3>
+      <p className="plan-blurb">{keepMpesa(plan.blurb)}</p>
       <div className="plan-price">
         {plan.from && <span className="plan-from">from</span>}
         <span className="plan-currency">KES</span>
@@ -21,7 +22,7 @@ export default function PlanCard({ plan }) {
         {plan.features.map((f) => (
           <li key={f}>
             <Check />
-            <span>{f}</span>
+            <span>{keepMpesa(f)}</span>
           </li>
         ))}
       </ul>

@@ -13,7 +13,7 @@ export default function Privacy() {
           <ul>
             <li>Details you give us when you contact us: name, business name, phone number, email and your message.</li>
             <li>Information you share while we work together, such as content for your website or marketing.</li>
-            <li>Payment confirmations for M-Pesa payments made to us.</li>
+            <li>Payment confirmations for M‑Pesa payments made to us.</li>
           </ul>
           <p>This website does not use advertising cookies or require you to create an account. The enquiry form does not store your details on our servers; it opens WhatsApp or your email app so you can send the message yourself.</p>
           <h2>How we use it</h2>
@@ -24,11 +24,11 @@ export default function Privacy() {
           </ul>
           <p>We do not sell your data. When we work with a partner agency on your project, we only share what they need to do the work, and only with your agreement.</p>
           <h2>Your customers' data</h2>
-          <p>Where we build a system that handles your customers' or members' data (for example a Chama/SACCO system or M-Pesa payments), you remain the data controller and we act as a processor on your instructions.</p>
+          <p>Where we build a system that handles your customers' or members' data (for example a Chama/SACCO system or M‑Pesa payments), you remain the data controller and we act as a processor on your instructions.</p>
           <h2>Your rights</h2>
           <p>You can ask to see, correct or delete the personal data we hold about you at any time by emailing <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
           <h2>Third parties</h2>
-          <p>WhatsApp (Meta), Safaricom M-Pesa and our email and hosting providers process data under their own privacy policies.</p>
+          <p>WhatsApp (Meta), Safaricom M‑Pesa and our email and hosting providers process data under their own privacy policies.</p>
         </div>
       </section>
     </>

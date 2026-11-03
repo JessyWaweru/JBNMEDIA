@@ -11,6 +11,9 @@ import TextType from '../components/reactbits/TextType';
 import { WhatsAppIcon, Mail, Pin, Clock, Call } from '../components/Icons';
 
 const services = [
+  'WhatsApp AI assistant',
+  'Website AI chat',
+  'Document and statement automation',
   'Online Presence plan (KES 8,000/month)',
   'Growth plan (KES 15,000/month)',
   'Content Clips (from KES 6,000/month)',
@@ -53,7 +56,7 @@ export default function Contact() {
     <>
       <Seo
         title="Contact"
-        description="Contact JBN Media on WhatsApp or email. Websites, M-Pesa integration, Chama/SACCO systems and social media marketing across Kenya."
+        description="Contact JBN Media on WhatsApp or email. AI assistants, websites, M-Pesa payments, Chama/SACCO systems and marketing for businesses across Kenya."
       />
 
       <PageHero
@@ -65,7 +68,7 @@ export default function Contact() {
             <TextType
               as="p"
               className="contact-type"
-              text={['Need a website?', 'Want M-Pesa payments?', 'Running a chama or SACCO?', 'Want more customers?']}
+              text={['Want an AI assistant?', 'Need a website?', 'Want M‑Pesa payments?', 'Running a chama or SACCO?', 'Want more customers?']}
               prefix="› "
               prefixColor="#ffb703"
               typingSpeed={45}

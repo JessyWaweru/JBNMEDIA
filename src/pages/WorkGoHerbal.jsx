@@ -12,7 +12,7 @@ import { mailLink } from '../config';
 import { MPESA, goherbal } from '../data/work';
 import { Arrow, Basket, Card, Check, Mail, Pause, Play, Refresh, Route, Truck } from '../components/Icons';
 
-const tags = ['M-Pesa STK push', 'Card payments', 'Paystack', 'Delivery options', 'Order tracking'];
+const tags = ['M‑Pesa STK push', 'Card payments', 'Paystack', 'Delivery options', 'Order tracking'];
 
 const before =
   'Before the shop, GoHerbal took orders in WhatsApp and Instagram chats: customers asked for prices, sent money to the till and then a screenshot, and every payment had to be checked by hand before an order could go out.';
@@ -34,12 +34,12 @@ const built = [
   {
     icon: <Card />,
     title: `Pay by ${MPESA} or card`,
-    text: 'An M-Pesa PIN prompt straight to the customer’s phone, or card payment through Paystack.',
+    text: 'An M‑Pesa PIN prompt straight to the customer’s phone, or card payment through Paystack.',
   },
   {
     icon: <Refresh />,
     title: 'Automatic confirmation',
-    text: 'The order page updates by itself once M-Pesa confirms. Nobody has to send or check a screenshot.',
+    text: 'The order page updates by itself once M‑Pesa confirms. Nobody has to send or check a screenshot.',
   },
   {
     icon: <Route />,
@@ -51,8 +51,8 @@ const built = [
 
 const steps = [
   { n: '01', title: 'Pick products and delivery', text: 'Add products to the basket, then choose pick-up in town, a same-day rider or a pickup agent.' },
-  { n: '02', title: 'Tap to pay', text: <>Enter the M-Pesa number and tap <q>Place order and pay with {MPESA}</q>.</> },
-  { n: '03', title: 'Enter the PIN', text: 'An M-Pesa prompt pops up on the phone. The customer enters their PIN, just like paying a till.' },
+  { n: '02', title: 'Tap to pay', text: <>Enter the M‑Pesa number and tap <q>Place order and pay with {MPESA}</q>.</> },
+  { n: '03', title: 'Enter the PIN', text: 'An M‑Pesa prompt pops up on the phone. The customer enters their PIN, just like paying a till.' },
   { n: '04', title: 'Payment confirmed', text: <>The page shows <q>Payment confirmed</q> by itself, and the shop gets a paid order.</> },
 ];
 
@@ -118,7 +118,7 @@ export default function WorkGoHerbal() {
       <Seo
         title={goherbal.seoTitle}
         description={goherbal.seoDescription}
-        image={{ src: goherbal.poster, ...goherbal.posterSize }}
+        image={{ src: goherbal.poster, ...goherbal.posterSize, alt: goherbal.posterAlt }}
       />
 
       <section className="page-hero page-hero-fx case-hero">
@@ -149,7 +149,7 @@ export default function WorkGoHerbal() {
             />
             <p className="lead">
               GoHerbal sells herbal teas and wellness products in Nairobi. We built them a shop where customers pick a
-              product, choose how to get it, and pay with an M-Pesa prompt on their phone. No screenshots, no
+              product, choose how to get it, and pay with an M‑Pesa prompt on their phone. No screenshots, no
               &lsquo;I&rsquo;ve sent it&rsquo; messages.
             </p>
             <ul className="case-tags" aria-label="What we built">
@@ -245,7 +245,7 @@ export default function WorkGoHerbal() {
               <div>
                 <h2>Take {MPESA} on your site</h2>
                 <p>
-                  We add M-Pesa and card payments to the website you already have, or build you a shop around them, like
+                  We add M‑Pesa and card payments to the website you already have, or build you a shop around them, like
                   GoHerbal&rsquo;s.
                 </p>
                 <ul className="ticks offer-ticks">

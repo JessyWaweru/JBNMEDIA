@@ -4,6 +4,9 @@
 // "M-Pesa" with a non-breaking hyphen (U+2011), for headings and buttons so it never splits across lines.
 export const MPESA = 'M‑Pesa';
 
+// For text kept with a plain hyphen (shared with meta tags, structured data and WhatsApp messages) but shown on the page.
+export const keepMpesa = (s) => (typeof s === 'string' ? s.replace(/M-Pesa/g, MPESA) : s);
+
 export const goherbal = {
   path: '/work/goherbal',
   name: 'GoHerbal',
@@ -19,9 +22,21 @@ export const goherbal = {
   video: '/case-studies/goherbal/goherbal-checkout-web.mp4',
   poster: '/case-studies/goherbal/goherbal-checkout-poster.jpg',
   posterSize: { width: 780, height: 1688 },
+  posterAlt: 'GoHerbal checkout on a phone, paid with M-Pesa',
   confirmed: '/case-studies/goherbal/goherbal-order-confirmed.webp',
   confirmedSize: { width: 390, height: 844 },
 };
+
+// Work in progress, shown as "coming soon" cards next to the GoHerbal case study on the home page.
+// When one is ready: remove `comingSoon`, write the `teaser`, and add a `path` to its case study page.
+export const upcomingWork = [
+  {
+    id: 'goherbal-whatsapp',
+    name: 'GoHerbal WhatsApp assistant',
+    teaser: 'The full story will be here once it is live.',
+    comingSoon: true,
+  },
+];
 
 // The businesses we work with. Entries marked `placeholder` are examples to show the layout:
 // they render in `npm run dev` only and never on the live site. Replace them with real clients.
@@ -30,7 +45,7 @@ export const partners = [
     name: 'GoHerbal',
     sector: 'Herbal teas & wellness',
     location: 'Nairobi',
-    work: 'Online shop with M-Pesa and card checkout, delivery options and live order tracking.',
+    work: 'Online shop with M‑Pesa and card checkout, delivery options and live order tracking.',
     url: goherbal.url,
     urlDisplay: goherbal.urlDisplay,
     caseStudy: goherbal.path,

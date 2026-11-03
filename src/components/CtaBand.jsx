@@ -5,8 +5,8 @@ import StarBorder from './reactbits/StarBorder';
 import Reveal from './fx/Reveal';
 
 export default function CtaBand({
-  title = 'Ready to get your business found online?',
-  text = 'Send us a WhatsApp message. We reply fast, and the first chat is free with no obligation.',
+  title = 'Ready to stop missing customers?',
+  text = 'Send us a WhatsApp message to book a free 15-minute call. No obligation.',
   message,
 }) {
   return (

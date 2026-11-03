@@ -2,7 +2,12 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { SITE } from '../config';
 
-const DEFAULT_IMAGE = { src: '/og-image.png', width: 1200, height: 630 };
+const DEFAULT_IMAGE = {
+  src: '/og-image.png',
+  width: 1200,
+  height: 630,
+  alt: 'JBN Media: your business answers customers and takes M-Pesa orders, even at 2am.',
+};
 
 function setMeta(selector, attr, value) {
   const el = document.head.querySelector(selector);
@@ -31,7 +36,7 @@ function setJsonLd(data) {
 export default function Seo({ title, description, image = DEFAULT_IMAGE, jsonLd }) {
   const { pathname } = useLocation();
   useEffect(() => {
-    const fullTitle = title ? `${title} | JBN Media` : 'JBN Media | Websites, M-Pesa & Marketing for Kenyan Businesses';
+    const fullTitle = title ? `${title} | JBN Media` : 'JBN Media | AI Assistants, Websites & M-Pesa for Kenyan Businesses';
     const url = `${SITE.url}${pathname === '/' ? '/' : pathname}`;
     document.title = fullTitle;
     if (description) {
@@ -43,8 +48,9 @@ export default function Seo({ title, description, image = DEFAULT_IMAGE, jsonLd 
     setMeta('meta[property="og:image"]', 'content', `${SITE.url}${image.src}`);
     setMeta('meta[property="og:image:width"]', 'content', String(image.width));
     setMeta('meta[property="og:image:height"]', 'content', String(image.height));
+    setMeta('meta[property="og:image:alt"]', 'content', image.alt || '');
     setMeta('link[rel="canonical"]', 'href', url);
     setJsonLd(jsonLd);
-  }, [title, description, pathname, image.src, image.width, image.height, jsonLd]);
+  }, [title, description, pathname, image.src, image.width, image.height, image.alt, jsonLd]);
   return null;
 }

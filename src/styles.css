@@ -60,6 +60,7 @@ button, input, select, textarea { font: inherit; }
 .muted { color: var(--muted); }
 .muted-light { color: rgba(255, 255, 255, 0.6); font-size: 0.92rem; }
 
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .skip-link { position: absolute; left: -9999px; top: 8px; background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 8px; z-index: 100; }
 .skip-link:focus { left: 8px; }
 
@@ -210,8 +211,8 @@ button, input, select, textarea { font: inherit; }
 }
 .float-card b { display: block; color: var(--ink); }
 .float-card small { color: var(--muted); }
-.float-pay { left: 0; top: 90px; }
-.float-msg { right: 0; bottom: 70px; animation-delay: -2.5s; }
+.float-pay { left: 0; top: 20px; }
+.float-msg { right: 0; bottom: 14px; animation-delay: -2.5s; }
 @media (min-width: 480px) { .float-pay { left: 6%; } .float-msg { right: 4%; } }
 .fc-icon { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; flex-shrink: 0; }
 .fc-green { background: var(--brand-50); color: var(--brand); }
@@ -689,3 +690,80 @@ html { overflow-x: clip; }
 }
 @media (prefers-reduced-motion: reduce) { .alliance-link { animation: none; } }
 .partners-clients-head { margin-bottom: 24px; }
+
+/* ── Services list (home, services, pricing) ─────────────────────────────── */
+.offers { display: grid; gap: 20px; }
+@media (min-width: 720px) {
+  .offers { grid-template-columns: repeat(2, 1fr); }
+  .offer-lead { grid-column: 1 / -1; }
+}
+/* Lead card spans the row, so the rest pair up; a lone last card takes the full row. */
+@media (min-width: 720px) and (max-width: 1059px) {
+  .offers > .offer:nth-child(even):last-child { grid-column: 1 / -1; }
+}
+/* Six tracks: the lead card takes the full row, the next three a third each, and the last two
+   a half each, so both the 6-card home list and the 3-card lists end on a full row. */
+@media (min-width: 1060px) {
+  .offers { grid-template-columns: repeat(6, 1fr); gap: 24px; }
+  .offers > .offer { grid-column: span 2; }
+  .offers > .offer:nth-last-child(-n+2) { grid-column: span 3; }
+  .offers > .offer-lead { grid-column: 1 / -1; }
+}
+.offer.spotlight-card { display: flex; flex-direction: column; padding: 28px 24px 24px; border-radius: var(--radius); background-color: var(--surface); }
+.offer .plan-badge { position: static; display: inline-block; margin-bottom: 16px; }
+.offer-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.offer-top h3 { margin: 0; }
+.offer-text { color: var(--muted); }
+.offer-side { margin-top: auto; }
+.offer-prices { margin: 4px 0 20px; padding: 14px 0 0; border-top: 1px dashed var(--line); display: grid; gap: 8px; }
+.offer-prices div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 12px; }
+.offer-prices dt { color: var(--muted); font-size: 0.93rem; font-weight: 600; }
+.offer-prices dd { margin: 0; font-weight: 800; color: var(--ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.offer-note { display: flex; gap: 8px; align-items: center; margin: -8px 0 16px; font-weight: 700; color: var(--brand); font-size: 0.95rem; }
+.offer-note svg { flex-shrink: 0; }
+.offer-link { margin: -4px 0 18px; }
+
+.offer-lead.spotlight-card {
+  background: radial-gradient(circle at 100% 0%, rgba(255, 183, 3, 0.18), transparent 45%), linear-gradient(150deg, var(--brand), var(--brand-800));
+  color: rgba(255, 255, 255, 0.85); box-shadow: var(--shadow-lg);
+}
+.offer-lead h3 { color: #fff; font-size: clamp(1.35rem, 3vw, 1.75rem); }
+.offer-lead .offer-text { color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; max-width: 560px; }
+.offer-lead .ticks svg { color: var(--gold); }
+.offer-lead .ticks li { color: #fff; }
+.offer-lead .offer-prices { border-color: rgba(255, 255, 255, 0.25); }
+.offer-lead .offer-prices dt { color: rgba(255, 255, 255, 0.8); }
+.offer-lead .offer-prices dd { color: var(--gold); font-size: 1.5rem; letter-spacing: -0.02em; }
+.icon-box-wa { background: var(--wa); color: #fff; }
+@media (min-width: 900px) {
+  .offer-lead.spotlight-card { flex-direction: row; align-items: flex-end; gap: 48px; padding: 36px 40px; }
+  .offer-lead .offer-main { flex: 1.5; }
+  .offer-lead .offer-ticks-list { grid-template-columns: 1fr 1fr; column-gap: 24px; margin: 0; }
+  .offer-lead .offer-side { flex: 1; margin: 0; }
+}
+
+/* ── Hero: WhatsApp chat mock ─────────────────────────────── */
+.mock-chat { display: flex; flex-direction: column; height: 100%; background: #efeae2; font-size: 0.74rem; line-height: 1.35; }
+.mock-chat-head { display: flex; align-items: center; gap: 8px; padding: 40px 12px 10px; background: var(--brand-800); color: #fff; }
+.mock-chat-head b { display: block; font-size: 0.85rem; }
+.mock-chat-head small { opacity: 0.75; font-size: 0.68rem; }
+.mock-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--gold); color: var(--ink); display: grid; place-items: center; font-weight: 800; font-size: 0.7rem; flex-shrink: 0; }
+.mock-msgs { display: flex; flex-direction: column; gap: 8px; padding: 12px 10px; }
+.mock-msg { max-width: 85%; padding: 7px 10px; border-radius: 10px; background: #fff; color: var(--ink); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08); }
+.mock-msg small { display: block; text-align: right; color: var(--muted); font-size: 0.62rem; margin-top: 2px; }
+.mock-in { align-self: flex-start; border-top-left-radius: 2px; }
+.mock-out { align-self: flex-end; background: #d9fdd3; border-top-right-radius: 2px; }
+.mock-note { align-self: center; background: #fff7d6; color: #5c4400; font-size: 0.66rem; padding: 4px 10px; border-radius: 8px; text-align: center; }
+
+.steps-3 { counter-reset: none; }
+@media (min-width: 640px) { .steps.steps-3 { grid-template-columns: repeat(3, 1fr); } }
+
+/* ── Work ─────────────────────────────── */
+.work-list { display: grid; gap: 20px; }
+.work-soon {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  border: 2px dashed var(--line); border-radius: var(--radius); padding: 20px; background: var(--surface);
+}
+.work-soon h3 { margin: 0 0 2px; }
+.work-soon p { margin: 0; color: var(--muted); }
+@media (min-width: 720px) { .work-soon { padding: 24px 40px; } .work-soon .placeholder-badge { margin-left: auto; } }

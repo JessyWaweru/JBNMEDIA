@@ -54,7 +54,7 @@ export const projects = [
     id: 'website',
     name: 'Business Website',
     from: true,
-    price: '10,000',
+    price: '25,000',
     unit: 'one-off',
     featured: true,
     badge: 'Best value',
@@ -65,7 +65,7 @@ export const projects = [
       'Set up so Google can find and list it',
       'Add M-Pesa payments anytime with M-Pesa Integration',
     ],
-    wa: "Hi, I'm interested in a Business Website (from KES 10,000)",
+    wa: "Hi, I'm interested in a Business Website (from KES 25,000)",
   },
   {
     id: 'mpesa',
@@ -170,5 +170,25 @@ export const faqs = [
   {
     q: 'Who does the marketing work?',
     a: 'Our in-house team handles content, clips and Meta ads day to day. For bigger jobs such as professional shoots, influencer work or other ad platforms, we bring in trusted partner agencies and manage them for you, so you still have one point of contact.',
+  },
+];
+
+// Questions about the AI assistants. Shown on the home and pricing pages, and baked into llms.txt.
+export const aiFaqs = [
+  {
+    q: 'Is my data safe?',
+    a: 'Yes. Your assistant runs on your own WhatsApp Business account and your own M-Pesa or payment account, so your customers and your money stay with you. Customers are told they are chatting with an assistant, and you or your staff can take over any chat at any time. We only keep the details needed to serve the customer, such as what they ordered and where to deliver it.',
+  },
+  {
+    q: 'How much does it cost each month?',
+    a: 'The WhatsApp AI assistant is KES 6,000 a month after a one-time setup of KES 30,000, and includes a weekly summary of what your customers asked. The website chat is KES 3,000 a month after a one-time setup of KES 15,000.',
+  },
+  {
+    q: "What happens when it doesn't know an answer?",
+    a: 'It hands the chat over to you or your staff, so a real person can reply. Questions it could not answer also show up in your weekly summary, so you can see what customers keep asking.',
+  },
+  {
+    q: 'How long does setup take?',
+    a: 'About 1 to 2 weeks. We start with a free 15-minute call, then build and test the assistant on your own products and prices. It goes live on your WhatsApp or website once you are happy with its answers.',
   },
 ];

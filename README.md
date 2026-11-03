@@ -1,14 +1,16 @@
 # JBN Media website
 
-Marketing site for **jbnmedia.org**: React + Vite, deployed as a static site on Render.
+Marketing site for **jbnmedia.org**, an AI agency for Kenyan businesses: React + Vite, deployed as a static site on Render.
 
 Pages: `/` · `/services` · `/work/goherbal` · `/partners` · `/results` · `/pricing` · `/about` · `/contact` · `/privacy` · `/terms`
 
 ## Edit your details
 
 - **WhatsApp number, email, hours:** `src/config.js` (every WhatsApp button reads from here)
-- **Prices and package contents:** `src/data/plans.js`
-- **Case study, partners and results:** `src/data/work.js`. Entries marked `placeholder` and the sample revenue
+- **Home page services list (order, prices, WhatsApp messages):** `src/data/services.js`
+- **Prices and package contents, FAQs:** `src/data/plans.js` (AI assistant questions are `aiFaqs`)
+- **Case study, partners and results:** `src/data/work.js`. Upcoming work (the "coming soon" cards on the home page) is
+  `upcomingWork`: remove `comingSoon` and add a `teaser` and `path` once a case study is ready. Entries marked `placeholder` and the sample revenue
   figure only show in `npm run dev`. `/results` stays hidden on the live site until you set `revenue.kes`.
 
 ## Run locally

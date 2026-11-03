@@ -19,11 +19,11 @@ export const companyFaqs = [
   },
   {
     q: 'Who is the CEO of JBN Media?',
-    a: `${FOUNDER.name} is the Founder and CEO of JBN Media, a Kenyan software and marketing company.`,
+    a: `${FOUNDER.name} is the Founder and CEO of JBN Media, a Kenyan AI agency.`,
   },
   {
     q: 'What does JBN Media do?',
-    a: 'JBN Media builds websites, M-Pesa payment integrations and Chama/SACCO systems, and runs social media marketing for Kenyan businesses.',
+    a: 'JBN Media is an AI agency for Kenyan businesses. It sets up WhatsApp and website AI assistants that answer customers, take orders and send the M-Pesa prompt, and builds websites, M-Pesa payments, Chama/SACCO systems and document automation. It also runs AI-assisted social media marketing.',
   },
   ...(revenue.kes
     ? [{
@@ -57,7 +57,7 @@ export function siteJsonLd() {
         url: SITE.url,
         logo: `${SITE.url}/favicon.svg`,
         image: `${SITE.url}/og-image.png`,
-        description: 'Kenyan software and marketing company building websites, M-Pesa integrations, Chama/SACCO systems and social media marketing for Kenyan businesses.',
+        description: 'Kenyan AI agency building WhatsApp and website AI assistants, websites, M-Pesa payments, Chama/SACCO systems, document automation and marketing for Kenyan businesses.',
         email: SITE.email,
         telephone: SITE.phone,
         areaServed: { '@type': 'Country', name: 'Kenya' },
@@ -65,7 +65,7 @@ export function siteJsonLd() {
         priceRange: 'From KES 3,000',
         founder: { '@id': FOUNDER_ID },
         employee: { '@id': FOUNDER_ID },
-        knowsAbout: ['Web development', 'M-Pesa integration', 'Daraja API', 'E-commerce', 'Chama and SACCO software', 'Social media marketing'],
+        knowsAbout: ['AI assistants', 'WhatsApp Business automation', 'Document automation', 'Web development', 'M-Pesa integration', 'Daraja API', 'E-commerce', 'Chama and SACCO software', 'Social media marketing'],
         member: allies.map((a) => ({ '@type': 'Organization', name: a.name, description: a.blurb, ...(a.url ? { url: a.url } : {}) })),
       },
       {

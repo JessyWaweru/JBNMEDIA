@@ -20,13 +20,13 @@ const edge = [
 
 const story = [
   'Too many great Kenyan businesses are invisible online. Customers search on Google, scroll Instagram and ask on WhatsApp, and they end up buying from whoever shows up first.',
-  "At the same time, the tools that could help are often built for other markets. They don't talk to M-Pesa, they're slow on a phone, or they're priced for big corporates.",
-  'JBN Media brings software and marketing together for small and growing businesses: websites and systems built around M-Pesa, plus the content and ads that bring customers to them.',
+  "At the same time, the tools that could help are often built for other markets. They don't talk to M‑Pesa, they're slow on a phone, or they're priced for big corporates.",
+  'JBN Media brings AI assistants, software and marketing together for small and growing businesses: assistants that answer customers on WhatsApp, websites and systems built around M‑Pesa, plus the content and ads that bring customers to them.',
 ];
 
 const values = [
   { icon: <Phone />, title: 'Mobile first, always', text: 'Your customers live on their phones. Everything we make is designed for a phone screen first.' },
-  { icon: <Card />, title: 'Get paid easily', text: 'If a customer wants to pay you, nothing should get in the way. That is why M-Pesa is built into what we make.' },
+  { icon: <Card />, title: 'Get paid easily', text: 'If a customer wants to pay you, nothing should get in the way. That is why M‑Pesa is built into what we make.' },
   { icon: <Shield />, title: 'Honest and clear', text: 'Published prices, written quotes and plain-English reports. No jargon, no hidden costs.' },
   { icon: <Handshake />, title: 'Partners, not vendors', text: 'We are measured by whether your business grows, not by how many features we ship.' },
 ];
@@ -38,14 +38,14 @@ export default function About() {
     <>
       <Seo
         title="About us"
-        description={`JBN Media is a Kenyan software and marketing company founded by ${FOUNDER.name} (${FOUNDER.role}), helping Kenyan businesses, chamas and SACCOs get found online and paid via M-Pesa.`}
+        description={`JBN Media is a Kenyan AI agency founded by ${FOUNDER.name} (${FOUNDER.role}), building AI assistants, websites and M-Pesa payments for Kenyan businesses, chamas and SACCOs.`}
         jsonLd={FAQ_LD}
       />
 
       <PageHero
         eyebrow="About JBN Media"
         title="Helping Kenyan businesses win online"
-        lead="We're a Kenyan software and marketing company. Our job is simple: get your business found online and make it easy for customers to pay you."
+        lead="We're a Kenyan AI agency. Our job is simple: make sure every customer gets an answer, and make it easy for them to pay you."
         background={<Waves lineColor="#b9dccb" accentColor="#ffb703" lightMode spacing={14} amplitude={28} speed={0.6} fade={0.4} opacity={0.8} />}
       />
 

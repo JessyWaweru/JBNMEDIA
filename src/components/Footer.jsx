@@ -3,14 +3,14 @@ import Logo from './Logo';
 import CurvedLoop from './reactbits/CurvedLoop';
 import ShinyText from './reactbits/ShinyText';
 import { SITE, waLink, telLink, mailLink } from '../config';
-import { goherbal, revenueFigure } from '../data/work';
+import { MPESA, goherbal, revenueFigure } from '../data/work';
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-loop" aria-hidden="true">
         <CurvedLoop
-          marqueeText="Get found online ✦ Get paid via M-Pesa ✦ Grow with JBN Media ✦ "
+          marqueeText={`Answer every customer ✦ Get paid via ${MPESA} ✦ Grow with JBN Media ✦ `}
           speed={1.2}
           curveAmount={120}
           fontSize={64}
@@ -23,16 +23,19 @@ export default function Footer() {
         <div className="footer-brand">
           <Logo />
           <p><ShinyText text={SITE.tagline} color="rgba(255, 255, 255, 0.75)" shineColor="#ffb703" speed={3} /></p>
-          <p className="muted-light">Software and marketing founded by an actuarial science graduate. Numbers you can trust.</p>
+          <p className="muted-light">An AI agency founded by an actuarial science graduate. Numbers you can trust.</p>
         </div>
 
         <div>
           <h4>Services</h4>
           <ul>
+            <li><Link to="/services#whatsapp-assistant">WhatsApp AI assistant</Link></li>
+            <li><Link to="/services#website-chat">Website AI chat</Link></li>
             <li><Link to="/services#websites">Business websites</Link></li>
-            <li><Link to="/services#mpesa">M-Pesa integration</Link></li>
+            <li><Link to="/services#mpesa">{MPESA} payments</Link></li>
             <li><Link to="/services#chama">Chama / SACCO systems</Link></li>
-            <li><Link to="/services#marketing">Social media marketing</Link></li>
+            <li><Link to="/services#document-automation">Document automation</Link></li>
+            <li><Link to="/services#marketing">AI marketing</Link></li>
           </ul>
         </div>
 

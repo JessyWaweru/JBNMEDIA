@@ -3,6 +3,7 @@ import Seo from '../components/Seo';
 import WaButton from '../components/WaButton';
 import CtaBand from '../components/CtaBand';
 import CaseStudyTeaser from '../components/CaseStudyTeaser';
+import ServiceCard from '../components/ServiceCard';
 import PageHero from '../components/fx/PageHero';
 import Reveal from '../components/fx/Reveal';
 import BorderGlow from '../components/reactbits/BorderGlow';
@@ -10,6 +11,9 @@ import ScrollVelocity from '../components/reactbits/ScrollVelocity';
 import GlowCard from '../components/fx/GlowCard';
 import Threads from '../components/reactbits/Threads';
 import { MPESA, goherbal } from '../data/work';
+import { serviceById } from '../data/services';
+
+const ai = ['whatsapp-assistant', 'website-chat', 'document-automation'].map(serviceById);
 import { Arrow, Check, Globe, Card, Users, Megaphone, Map, Chart, Handshake, Wrench, Video, Report, Shield } from '../components/Icons';
 
 const software = [
@@ -17,17 +21,17 @@ const software = [
     id: 'websites',
     icon: <Globe />,
     title: 'Business websites',
-    price: 'from KES 10,000',
-    text: 'A fast, professional website on your own domain that works perfectly on phones and sends customers straight to your WhatsApp. Add M-Pesa payments whenever you are ready.',
-    points: ['Up to 5 pages, mobile-friendly', 'Your own domain', 'WhatsApp button and enquiry form', 'Optional M-Pesa payments (from KES 12,000)', 'Ready in 2 to 3 weeks'],
-    wa: "Hi, I'm interested in a Business Website (from KES 10,000)",
+    price: 'from KES 25,000',
+    text: `A fast, professional website on your own domain that works perfectly on phones and sends customers straight to your WhatsApp. Add ${MPESA} payments or an AI chat whenever you are ready.`,
+    points: ['Up to 5 pages, mobile-friendly', 'Your own domain', 'WhatsApp button and enquiry form', `Optional ${MPESA} payments (from KES 12,000)`, 'Optional AI chat on your site', 'Ready in 2 to 3 weeks'],
+    wa: "Hi, I'm interested in a Business Website (from KES 25,000)",
   },
   {
     id: 'mpesa',
     icon: <Card />,
     title: `Take ${MPESA} on your site`,
     price: 'from KES 12,000',
-    text: "We add M-Pesa and card payments to the website you already have, or build you a shop around them, like GoHerbal's.",
+    text: `We add ${MPESA} and card payments to the website you already have, or build you a shop around them, like GoHerbal's.`,
     points: [
       'Customers pay with a PIN prompt on their own phone',
       'You get confirmed, paid orders instead of chasing screenshots',
@@ -41,10 +45,10 @@ const software = [
   {
     id: 'chama',
     icon: <Users />,
-    title: 'Chama & SACCO systems',
+    title: 'Chama & SACCO management systems',
     price: 'from KES 40,000',
     text: 'Replace the notebook and spreadsheet with a system that tracks every contribution and gives members their own statements. The loan maths is designed by an actuarial science graduate, so interest and repayment schedules are right to the shilling.',
-    points: ['Automatic contribution tracking', 'Loans on reducing balance or flat rate', 'Correct interest and repayment schedules', 'M-Pesa contributions', 'Member statements'],
+    points: ['Automatic contribution tracking', 'Loans on reducing balance or flat rate', 'Correct interest and repayment schedules', `${MPESA} contributions`, 'Member statements', 'Can add an AI assistant that answers members'],
     wa: "Hi, I'm interested in a Chama / SACCO System",
   },
   {
@@ -53,7 +57,7 @@ const software = [
     title: 'Custom business software',
     price: 'from KES 50,000',
     text: 'Booking systems, stock and sales tracking, school fee portals, customer dashboards. If your business runs on it, we can build it.',
-    points: ['Built around how you already work', 'Works on phone and computer', 'M-Pesa where you need it', 'Fixed quote before we start'],
+    points: ['Built around how you already work', 'Works on phone and computer', `${MPESA} where you need it`, 'Fixed quote before we start'],
     wa: "Hi, I'd like a quote for custom software for my business (from KES 50,000)",
   },
   {
@@ -68,7 +72,7 @@ const software = [
 ];
 
 const marketing = [
-  { icon: <Megaphone />, title: 'Social media management', text: 'Designed posts, captions and short videos for Facebook, Instagram and TikTok, made from photos you send us, graphics and AI visuals. No shoots needed.' },
+  { icon: <Megaphone />, title: 'AI-assisted social media', text: 'Designed posts, captions and short videos for Facebook, Instagram and TikTok, made faster with AI from photos you send us, and checked by a person before they go out. No shoots needed.' },
   { icon: <Map />, title: 'Google Business Profile', text: 'Show up on Google Maps and search when people nearby look for what you sell, with photos, hours and reviews.' },
   { icon: <Card />, title: 'WhatsApp Business catalog', text: 'Your products and prices neatly set up in WhatsApp so customers can browse and order in the chat.' },
   { icon: <Video />, title: 'Content clips', text: 'We cut your lives, videos and podcasts into short captioned clips for TikTok, Reels, Shorts and WhatsApp Status. From KES 6,000/month for 15 clips.' },
@@ -81,27 +85,40 @@ export default function Services() {
     <>
       <Seo
         title="Services"
-        description="Business websites, M-Pesa integration, Chama/SACCO systems, custom software, social media management, Google Business Profile and ad campaigns for Kenyan businesses."
+        description="WhatsApp and website AI assistants, document automation, business websites, M-Pesa payments, Chama/SACCO systems and AI-assisted marketing for Kenyan businesses."
       />
 
       <PageHero
         eyebrow="Services"
-        title="Software and marketing, under one roof"
-        lead="We build the digital tools your business runs on, then help customers find them. One team, one WhatsApp chat."
+        title="AI assistants, websites and marketing, under one roof"
+        lead="We set up assistants that answer your customers and take orders, build the websites and payments behind them, and bring customers in. One team, one WhatsApp chat."
         background={<Threads color={[0.04, 0.43, 0.31]} accentColor={[1, 0.72, 0.01]} amplitude={1.4} distance={0.3} lineCount={50} enableMouseInteraction opacity={0.55} />}
       >
         <nav className="pill-nav" aria-label="Jump to section">
-          <a href="#software">Software</a>
+          <a href="#ai">AI assistants</a>
+          <a href="#software">Websites & systems</a>
           <a href="#marketing">Marketing</a>
           <a href="#partners">Partner agencies</a>
         </nav>
       </PageHero>
 
+      <section className="section pt-0" id="ai">
+        <div className="container">
+          <div className="group-head">
+            <h2>AI assistants and automation</h2>
+            <p>Answer customers, take orders and sort your paperwork, on your own WhatsApp, website and accounts.</p>
+          </div>
+          <Reveal className="offers" stagger={0.1}>
+            {ai.map((s) => <ServiceCard key={s.id} service={s} />)}
+          </Reveal>
+        </div>
+      </section>
+
       <section className="section pt-0" id="software">
         <div className="container">
           <div className="group-head">
-            <h2>Software for your business</h2>
-            <p>Built for Kenyan businesses, with M-Pesa at the centre.</p>
+            <h2>Websites and business systems</h2>
+            <p>Built for Kenyan businesses, with {MPESA} at the centre. Each can add an AI assistant.</p>
           </div>
           <Reveal className="services" stagger={0.1}>
             {software.map((s) => (
@@ -141,7 +158,7 @@ export default function Services() {
       <section className="section section-tint" id="marketing">
         <div className="container">
           <div className="group-head">
-            <h2>Marketing that brings enquiries</h2>
+            <h2>AI marketing that brings enquiries</h2>
             <p>
               Available as monthly plans from KES 8,000. You get a one-page report every month showing reach, enquiries and
               what we'll do next.
