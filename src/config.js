@@ -5,8 +5,8 @@ export const SITE = {
   domain: 'jbnmedia.org',
   tagline: 'AI assistants, websites and M‑Pesa payments for Kenyan businesses.',
   // WhatsApp number in international format: digits only, no "+", no spaces, no leading 0.
-  whatsapp: '254703261126',
-  whatsappDisplay: '0703 261 126',
+  whatsapp: '254115393779',
+  whatsappDisplay: '0115 393 779',
   // Number for normal phone calls.
   phone: '+254115393779',
   phoneDisplay: '0115 393 779',
