@@ -1,10 +1,7 @@
 export default function Logo() {
   return (
     <span className="logo">
-      <span className="logo-mark" aria-hidden="true">
-        JBN
-        <i />
-      </span>
+      <img className="logo-mark" src="/logo-mark.png" alt="" width="40" height="40" />
       <span className="logo-text">
         JBN <b>Media</b>
       </span>
