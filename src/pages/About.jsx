@@ -46,7 +46,7 @@ export default function About() {
         eyebrow="About JBN Media"
         title="Helping Kenyan businesses win online"
         lead="We're a Kenyan AI agency. Our job is simple: make sure every customer gets an answer, and make it easy for them to pay you."
-        background={<Waves lineColor="#b9dccb" accentColor="#ffb703" lightMode spacing={14} amplitude={28} speed={0.6} fade={0.4} opacity={0.8} />}
+        background={<Waves lineColor="#e9c4cf" accentColor="#e8a83b" lightMode spacing={14} amplitude={28} speed={0.6} fade={0.4} opacity={0.8} />}
       />
 
       <section className="section pt-0">
@@ -78,7 +78,7 @@ export default function About() {
       <section className="section pt-0">
         <div className="container">
           <div className="edge">
-            <Threads className="edge-threads" color={[1, 0.72, 0.01]} amplitude={1.2} distance={0.2} lineCount={40} opacity={0.35} />
+            <Threads className="edge-threads" color={[0.91, 0.66, 0.23]} amplitude={1.2} distance={0.2} lineCount={40} opacity={0.35} />
             <div className="edge-copy">
               <span className="eyebrow eyebrow-light">The founder's edge</span>
               <h2>
@@ -101,7 +101,7 @@ export default function About() {
                 Kenyan businesses that can't afford to guess.
               </p>
               <div className="edge-badge" aria-hidden="true">
-                <CircularText text="PRICE ✦ RISK ✦ INTEREST ✦ DATA ✦ " size={120} fontSize={12} spinDuration={20} color="#ffb703" />
+                <CircularText text="PRICE ✦ RISK ✦ INTEREST ✦ DATA ✦ " size={120} fontSize={12} spinDuration={20} color="#e8a83b" />
               </div>
             </div>
             <Reveal className="edge-list" stagger={0.12}>
@@ -127,7 +127,7 @@ export default function About() {
           </div>
           <Reveal className="mini-grid" stagger={0.1}>
             {values.map((v) => (
-              <GlowCard key={v.title} className="mini" theme="light" spotlightColor="#0b6e4f" intensity={0.3}>
+              <GlowCard key={v.title} className="mini" theme="light" spotlightColor="#7a1d3f" intensity={0.3}>
                 <span className="icon-box">{v.icon}</span>
                 <h3>{v.title}</h3>
                 <p>{v.text}</p>

@@ -29,7 +29,7 @@ function ScrollManager() {
 
 export default function Layout() {
   return (
-    <ClickSpark sparkColor="#ffb703" sparkSize={10} sparkRadius={22} sparkCount={8} duration={450}>
+    <ClickSpark sparkColor="#e8a83b" sparkSize={10} sparkRadius={22} sparkCount={8} duration={450}>
       <ScrollManager />
       <a href="#main" className="skip-link">Skip to content</a>
       <Header />

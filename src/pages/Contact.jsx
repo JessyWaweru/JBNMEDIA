@@ -71,7 +71,7 @@ export default function Contact() {
               className="contact-type"
               text={['Want an AI assistant?', 'Need a website?', 'Want M‑Pesa payments?', 'Running a chama or SACCO?', 'Want more customers?']}
               prefix="› "
-              prefixColor="#ffb703"
+              prefixColor="#e8a83b"
               typingSpeed={45}
               pauseDuration={1600}
               cursorCharacter="▍"
@@ -81,7 +81,7 @@ export default function Contact() {
         }
         background={
           <Particles
-            particleColors={['#0b6e4f', '#25d366', '#ffb703']}
+            particleColors={['#7a1d3f', '#c0456b', '#e8a83b']}
             particleCount={140}
             particleSpread={12}
             speed={0.08}
@@ -117,7 +117,7 @@ export default function Contact() {
           </div>
 
           <Reveal delay={0.1}>
-          <BorderGlow className="form-glow" backgroundColor="#ffffff" borderRadius={18} glowColor="150 80 35" colors={['#0b6e4f', '#25d366', '#ffb703']}>
+          <BorderGlow className="form-glow" backgroundColor="#ffffff" borderRadius={18} glowColor="340 60 35" colors={['#7a1d3f', '#c0456b', '#e8a83b']}>
           <form className="form" onSubmit={submit}>
             <h2>Send an enquiry</h2>
             <p className="muted">Fill this in and it opens WhatsApp with your message ready to send.</p>

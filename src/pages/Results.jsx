@@ -22,7 +22,7 @@ export default function Results() {
         eyebrow="Results"
         title="Money in our clients' accounts"
         lead="We judge our work by what it earns. This is the total paid through the checkouts and payment systems we've built."
-        background={<LightRays raysOrigin="top-center" raysColor="#25d366" lightMode raysSpeed={0.8} lightSpread={0.8} rayLength={2.2} />}
+        background={<LightRays raysOrigin="top-center" raysColor="#c0456b" lightMode raysSpeed={0.8} lightSpread={0.8} rayLength={2.2} />}
       />
 
       <section className="section pt-0">

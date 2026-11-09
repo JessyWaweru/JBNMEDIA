@@ -20,7 +20,7 @@ export default function ServiceCard({ service: s }) {
       id={s.id}
       className={`offer ${s.lead ? 'offer-lead' : ''}`}
       theme={s.lead ? undefined : 'light'}
-      spotlightColor={s.lead ? '#ffb703' : '#0b6e4f'}
+      spotlightColor={s.lead ? '#e8a83b' : '#7a1d3f'}
       intensity={0.3}
     >
       <div className="offer-main">

@@ -10,11 +10,11 @@ export default function NotFound() {
       <Seo title="Page not found" />
       <section className="page-hero notfound">
         <div className="page-hero-bg" aria-hidden="true">
-          <LightRays raysOrigin="top-center" raysColor="#25d366" lightMode raysSpeed={0.8} lightSpread={0.8} rayLength={2.2} />
+          <LightRays raysOrigin="top-center" raysColor="#c0456b" lightMode raysSpeed={0.8} lightSpread={0.8} rayLength={2.2} />
         </div>
         <div className="container narrow center">
           <div className="notfound-fuzz">
-            <FuzzyText fontSize="clamp(5rem, 22vw, 11rem)" color="#0b6e4f" baseIntensity={0.15} hoverIntensity={0.45} glitchMode trigger="always">
+            <FuzzyText fontSize="clamp(5rem, 22vw, 11rem)" color="#7a1d3f" baseIntensity={0.15} hoverIntensity={0.45} glitchMode trigger="always">
               404
             </FuzzyText>
           </div>

@@ -14,14 +14,14 @@ export default function CtaBand({
       <div className="container">
         <Reveal>
           <div className="cta-band">
-            <Silk className="cta-silk" color="#0b6e4f" sheenColor="#ffb703" speed={3} scale={1.2} sheen={0.35} glow={0.25} />
+            <Silk className="cta-silk" color="#7a1d3f" sheenColor="#e8a83b" speed={3} scale={1.2} sheen={0.35} glow={0.25} />
             <div>
               <h2>{title}</h2>
               <p>{text}</p>
             </div>
             <div className="cta-actions">
               <WaButton message={message} size="lg">Chat on WhatsApp</WaButton>
-              <StarBorder as={Link} to="/pricing" className="btn btn-lg star-btn" color="#ffb703" radius={999} duration={3} sparkle>
+              <StarBorder as={Link} to="/pricing" className="btn btn-lg star-btn" color="#e8a83b" radius={999} duration={3} sparkle>
                 See pricing
               </StarBorder>
             </div>

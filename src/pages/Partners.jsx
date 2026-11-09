@@ -30,7 +30,7 @@ function AllyNode({ ally }) {
     </div>
   );
   return (
-    <ElectricBorder className="alliance-node" color="#ffb703" theme="dark" borderRadius={20} speed={0.7} chaos={0.3} thickness={1.4} glow={0.8}>
+    <ElectricBorder className="alliance-node" color="#e8a83b" theme="dark" borderRadius={20} speed={0.7} chaos={0.3} thickness={1.4} glow={0.8}>
       {ally.url ? <a href={ally.url} target="_blank" rel="noopener noreferrer" className="ally-link">{inner}</a> : inner}
     </ElectricBorder>
   );
@@ -48,7 +48,7 @@ export default function Partners() {
         eyebrow="Partners"
         title="Businesses we work with"
         lead="Kenyan businesses that trust us with their websites, payments and marketing."
-        background={<Waves lineColor="#b9dccb" accentColor="#ffb703" lightMode spacing={14} amplitude={28} speed={0.6} fade={0.4} opacity={0.8} />}
+        background={<Waves lineColor="#e9c4cf" accentColor="#e8a83b" lightMode spacing={14} amplitude={28} speed={0.6} fade={0.4} opacity={0.8} />}
       />
 
       <section className="section pt-0">
@@ -57,7 +57,7 @@ export default function Partners() {
             <div className="alliance-head">
               <span className="eyebrow eyebrow-light">Partner network</span>
               <h2>
-                <GradientText colors={['#ffb703', '#25d366', '#ffb703']} animationSpeed={6}>Stronger together</GradientText>
+                <GradientText colors={['#e8a83b', '#c0456b', '#e8a83b']} animationSpeed={6}>Stronger together</GradientText>
               </h2>
               <p>The companies we team up with to build, launch and grow faster for our clients.</p>
             </div>
@@ -76,7 +76,7 @@ export default function Partners() {
           </div>
           <Reveal className="partners" stagger={0.1}>
             {visible.map((p) => (
-              <GlowCard key={p.name} className="mini partner" theme="light" spotlightColor="#0b6e4f" intensity={0.3}>
+              <GlowCard key={p.name} className="mini partner" theme="light" spotlightColor="#7a1d3f" intensity={0.3}>
                 <div className="partner-top">
                   <span className="partner-mark" aria-hidden="true">{initials(p.name)}</span>
                   {p.placeholder && <span className="placeholder-badge">Placeholder · dev only</span>}

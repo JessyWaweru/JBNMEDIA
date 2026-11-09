@@ -22,7 +22,7 @@ export default function Footer() {
       <div className="container footer-grid">
         <div className="footer-brand">
           <Logo />
-          <p><ShinyText text={SITE.tagline} color="rgba(255, 255, 255, 0.75)" shineColor="#ffb703" speed={3} /></p>
+          <p><ShinyText text={SITE.tagline} color="rgba(255, 255, 255, 0.75)" shineColor="#e8a83b" speed={3} /></p>
           <p className="muted-light">An AI agency founded by an actuarial science graduate. Numbers you can trust.</p>
         </div>
 

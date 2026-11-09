@@ -84,7 +84,7 @@ export default function Home() {
       <section className="hero">
         <Aurora
           className="hero-aurora"
-          colorStops={['#0b6e4f', '#25d366', '#ffb703']}
+          colorStops={['#7a1d3f', '#c0456b', '#e8a83b']}
           lightMode
           amplitude={1}
           blend={0.6}
@@ -97,7 +97,7 @@ export default function Home() {
             <span className="eyebrow">AI agency · Kenya</span>
             <h1>
               Your business answers customers and takes <span className="hl-gold">{MPESA} orders</span>,{' '}
-              <GradientText className="hl" colors={['#0b6e4f', '#25d366', '#0b6e4f']} animationSpeed={6}>
+              <GradientText className="hl" colors={['#7a1d3f', '#c0456b', '#7a1d3f']} animationSpeed={6}>
                 even at 2am
               </GradientText>
             </h1>
@@ -201,7 +201,7 @@ export default function Home() {
           </div>
           <Reveal className="steps steps-3" stagger={0.12}>
             {steps.map((s) => (
-              <GlareHover key={s.n} className="step" glareColor="#ffb703" glareOpacity={0.35} borderRadius="18px" blendMode="multiply">
+              <GlareHover key={s.n} className="step" glareColor="#e8a83b" glareOpacity={0.35} borderRadius="18px" blendMode="multiply">
                 <div className="step-inner">
                   <span className="step-n">{s.n}</span>
                   <h3>{s.title}</h3>
@@ -263,7 +263,7 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <div className="edge">
-            <Threads className="edge-threads" color={[1, 0.72, 0.01]} amplitude={1.2} distance={0.2} lineCount={40} opacity={0.35} />
+            <Threads className="edge-threads" color={[0.91, 0.66, 0.23]} amplitude={1.2} distance={0.2} lineCount={40} opacity={0.35} />
             <div className="edge-copy">
               <span className="eyebrow eyebrow-light">Our unfair advantage</span>
               <h2>
@@ -281,7 +281,7 @@ export default function Home() {
                 We bring that same discipline to small businesses and groups.
               </p>
               <div className="edge-badge" aria-hidden="true">
-                <CircularText text="NUMBERS ✦ DONE ✦ RIGHT ✦ " size={120} fontSize={13} spinDuration={18} color="#ffb703" />
+                <CircularText text="NUMBERS ✦ DONE ✦ RIGHT ✦ " size={120} fontSize={13} spinDuration={18} color="#e8a83b" />
               </div>
             </div>
             <Reveal className="edge-list" stagger={0.12}>
@@ -302,7 +302,7 @@ export default function Home() {
       <section className="section section-dark section-aurora">
         <Aurora
           className="dark-aurora"
-          colorStops={['#063d2c', '#25d366', '#ffb703']}
+          colorStops={['#3d0d20', '#c0456b', '#e8a83b']}
           amplitude={0.8}
           blend={0.55}
           speed={0.5}
@@ -316,7 +316,7 @@ export default function Home() {
           </div>
           <Reveal className="reasons" stagger={0.08}>
             {reasons.map((r) => (
-              <GlowCard key={r.title} className="reason" spotlightColor="#ffb703" intensity={0.3} borderGlow={1} spotlightSize={300}>
+              <GlowCard key={r.title} className="reason" spotlightColor="#e8a83b" intensity={0.3} borderGlow={1} spotlightSize={300}>
                 <span className="icon-box icon-box-dark">{r.icon}</span>
                 <h3>{r.title}</h3>
                 <p>{r.text}</p>

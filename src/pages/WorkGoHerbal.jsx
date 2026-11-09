@@ -126,8 +126,8 @@ export default function WorkGoHerbal() {
           <DotGrid
             dotSize={4}
             gap={22}
-            baseColor="#d3ebe0"
-            activeColor="#0b6e4f"
+            baseColor="#f3d9e0"
+            activeColor="#7a1d3f"
             proximity={120}
             shockRadius={220}
             mouseInteraction={finePointer}
@@ -197,7 +197,7 @@ export default function WorkGoHerbal() {
           </div>
           <Reveal className="case-built" stagger={0.08}>
             {built.map((b) => (
-              <GlowCard key={b.title} className={`mini${b.wide ? ' case-built-wide' : ''}`} theme="light" spotlightColor="#0b6e4f" intensity={0.3}>
+              <GlowCard key={b.title} className={`mini${b.wide ? ' case-built-wide' : ''}`} theme="light" spotlightColor="#7a1d3f" intensity={0.3}>
                 <span className="icon-box">{b.icon}</span>
                 <h3>{b.title}</h3>
                 <p>{b.text}</p>
@@ -225,7 +225,7 @@ export default function WorkGoHerbal() {
           </div>
           <Reveal className="steps" stagger={0.12}>
             {steps.map((s) => (
-              <GlareHover key={s.n} className="step" glareColor="#ffb703" glareOpacity={0.35} borderRadius="18px" blendMode="multiply">
+              <GlareHover key={s.n} className="step" glareColor="#e8a83b" glareOpacity={0.35} borderRadius="18px" blendMode="multiply">
                 <div className="step-inner">
                   <span className="step-n">{s.n}</span>
                   <h3>{s.title}</h3>
@@ -241,7 +241,7 @@ export default function WorkGoHerbal() {
         <div className="container">
           <Reveal>
             <div className="cta-band offer">
-              <Silk className="cta-silk" color="#0b6e4f" sheenColor="#ffb703" speed={3} scale={1.2} sheen={0.35} glow={0.25} />
+              <Silk className="cta-silk" color="#7a1d3f" sheenColor="#e8a83b" speed={3} scale={1.2} sheen={0.35} glow={0.25} />
               <div>
                 <h2>Take {MPESA} on your site</h2>
                 <p>

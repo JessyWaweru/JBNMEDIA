@@ -35,8 +35,8 @@ export default function Pricing() {
           <DotGrid
             dotSize={4}
             gap={22}
-            baseColor="#d3ebe0"
-            activeColor="#0b6e4f"
+            baseColor="#f3d9e0"
+            activeColor="#7a1d3f"
             proximity={120}
             shockRadius={220}
             mouseInteraction={finePointer}
@@ -97,7 +97,7 @@ export default function Pricing() {
             <div className="care-copy">
               <span className="icon-box"><Wrench /></span>
               <div>
-                <h2><ShinyText text={care.name} color="#0f1d17" shineColor="#ffb703" speed={2.5} /></h2>
+                <h2><ShinyText text={care.name} color="#2a0914" shineColor="#e8a83b" speed={2.5} /></h2>
                 <p>{care.blurb}</p>
                 <ul className="ticks ticks-inline">
                   {care.features.map((f) => (<li key={f}><Check /> {f}</li>))}

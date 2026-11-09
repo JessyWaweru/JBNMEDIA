@@ -92,7 +92,7 @@ export default function Services() {
         eyebrow="Services"
         title="AI assistants, websites and marketing, under one roof"
         lead="We set up assistants that answer your customers and take orders, build the websites and payments behind them, and bring customers in. One team, one WhatsApp chat."
-        background={<Threads color={[0.04, 0.43, 0.31]} accentColor={[1, 0.72, 0.01]} amplitude={1.4} distance={0.3} lineCount={50} enableMouseInteraction opacity={0.55} />}
+        background={<Threads color={[0.48, 0.11, 0.25]} accentColor={[0.91, 0.66, 0.23]} amplitude={1.4} distance={0.3} lineCount={50} enableMouseInteraction opacity={0.55} />}
       >
         <nav className="pill-nav" aria-label="Jump to section">
           <a href="#ai">AI assistants</a>
@@ -122,7 +122,7 @@ export default function Services() {
           </div>
           <Reveal className="services" stagger={0.1}>
             {software.map((s) => (
-              <GlowCard key={s.id} id={s.id} className="service" theme="light" spotlightColor="#0b6e4f" intensity={0.3}>
+              <GlowCard key={s.id} id={s.id} className="service" theme="light" spotlightColor="#7a1d3f" intensity={0.3}>
                 <div className="service-top">
                   <span className="icon-box">{s.icon}</span>
                   <span className="service-price">{s.price}</span>
@@ -166,7 +166,7 @@ export default function Services() {
           </div>
           <Reveal className="mini-grid mini-grid-3" stagger={0.08}>
             {marketing.map((m) => (
-              <GlowCard key={m.title} className="mini" theme="light" spotlightColor="#ffb703" intensity={0.45}>
+              <GlowCard key={m.title} className="mini" theme="light" spotlightColor="#e8a83b" intensity={0.45}>
                 <span className="icon-box">{m.icon}</span>
                 <h3>{m.title}</h3>
                 <p>{m.text}</p>
@@ -198,7 +198,7 @@ export default function Services() {
               </WaButton>
             </div>
             <Reveal>
-            <BorderGlow className="partner-glow" backgroundColor="#ffffff" borderRadius={18} glowColor="150 80 35" colors={['#0b6e4f', '#25d366', '#ffb703']} animated>
+            <BorderGlow className="partner-glow" backgroundColor="#ffffff" borderRadius={18} glowColor="340 60 35" colors={['#7a1d3f', '#c0456b', '#e8a83b']} animated>
             <div className="partner-card">
               <span className="icon-box"><Handshake /></span>
               <ul className="ticks">
