@@ -744,6 +744,10 @@ const ElectricBorder = ({
       if (!gl.isContextLost()) {
         gl.deleteVertexArray(vao);
         gl.deleteProgram(program.program);
+        // Free the GPU context once the canvas has left the page; browsers (iOS Safari especially)
+        // crash the tab when unmounted contexts pile up. A re-run on the same canvas keeps it.
+        const loseExt = gl.getExtension('WEBGL_lose_context');
+        setTimeout(() => { if (!gl.canvas.isConnected) loseExt?.loseContext(); }, 0);
       }
     };
   }, [generation]);
