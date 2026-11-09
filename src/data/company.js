@@ -55,7 +55,7 @@ export function siteJsonLd() {
         name: SITE.name,
         alternateName: ['JBNMedia', 'JBnMedia'],
         url: SITE.url,
-        logo: `${SITE.url}/logo.png`,
+        logo: `${SITE.url}/logo.png?v=2`,
         image: `${SITE.url}/og-image.png`,
         description: 'Kenyan AI agency building WhatsApp and website AI assistants, websites, M-Pesa payments, Chama/SACCO systems, document automation and marketing for Kenyan businesses.',
         email: SITE.email,
