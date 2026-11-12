@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
 import Seo from '../components/Seo';
+import PhoneVideo from '../components/PhoneVideo';
 import WaButton from '../components/WaButton';
 import Reveal from '../components/fx/Reveal';
 import GlowCard from '../components/fx/GlowCard';
@@ -10,7 +10,7 @@ import SplitText from '../components/reactbits/SplitText';
 import { useFinePointer } from '../hooks/useFinePointer';
 import { mailLink } from '../config';
 import { MPESA, goherbal } from '../data/work';
-import { Arrow, Basket, Card, Check, Mail, Pause, Play, Refresh, Route, Truck } from '../components/Icons';
+import { Arrow, Basket, Card, Check, Mail, Refresh, Route, Truck } from '../components/Icons';
 
 const tags = ['M‑Pesa STK push', 'Card payments', 'Paystack', 'Delivery options', 'Order tracking'];
 
@@ -64,53 +64,6 @@ const offerPoints = [
 
 const OFFER_WA = "Hi JBN Media, I'd like M-Pesa payments on my site";
 
-function CheckoutVideo() {
-  const ref = useRef(null);
-  // Respect reduced motion: show the poster and let people press play themselves.
-  const [reduced] = useState(() => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  const [playing, setPlaying] = useState(!reduced);
-
-  useEffect(() => {
-    const v = ref.current;
-    if (!v) return undefined;
-    const onPlay = () => setPlaying(true);
-    const onPause = () => setPlaying(false);
-    v.addEventListener('play', onPlay);
-    v.addEventListener('pause', onPause);
-    return () => {
-      v.removeEventListener('play', onPlay);
-      v.removeEventListener('pause', onPause);
-    };
-  }, []);
-
-  const toggle = () => {
-    const v = ref.current;
-    if (v.paused) v.play().catch(() => {});
-    else v.pause();
-  };
-
-  return (
-    <div className="device device-main">
-      <video
-        ref={ref}
-        src={goherbal.video}
-        poster={goherbal.poster}
-        width={goherbal.posterSize.width}
-        height={goherbal.posterSize.height}
-        autoPlay={!reduced}
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        aria-label="Screen recording of GoHerbal's checkout: choosing delivery, entering an M-Pesa number, and the order page confirming payment."
-      />
-      <button type="button" className="device-toggle" onClick={toggle} aria-label={playing ? 'Pause video' : 'Play video'}>
-        {playing ? <Pause /> : <Play />}
-      </button>
-    </div>
-  );
-}
-
 export default function WorkGoHerbal() {
   const finePointer = useFinePointer();
   return (
@@ -162,7 +115,10 @@ export default function WorkGoHerbal() {
 
           <figure className="case-media">
             <div className="case-phones">
-              <CheckoutVideo />
+              <PhoneVideo
+                media={goherbal}
+                label="Screen recording of GoHerbal's checkout: choosing delivery, entering an M-Pesa number, and the order page confirming payment."
+              />
               <div className="device device-back">
                 <img
                   src={goherbal.confirmed}

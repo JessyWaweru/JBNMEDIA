@@ -11,6 +11,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Terms = lazy(() => import('./pages/Terms'));
 const WorkGoHerbal = lazy(() => import('./pages/WorkGoHerbal'));
+const WorkGoHerbalWhatsApp = lazy(() => import('./pages/WorkGoHerbalWhatsApp'));
 const Partners = lazy(() => import('./pages/Partners'));
 const Results = lazy(() => import('./pages/Results'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="privacy" element={<Privacy />} />
         <Route path="terms" element={<Terms />} />
         <Route path="work/goherbal" element={<WorkGoHerbal />} />
+        <Route path="work/goherbal-whatsapp" element={<WorkGoHerbalWhatsApp />} />
         <Route path="partners" element={<Partners />} />
         <Route path="results" element={<Results />} />
         <Route path="*" element={<NotFound />} />

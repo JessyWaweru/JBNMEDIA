@@ -235,14 +235,7 @@ export default function Home() {
                   <span className="placeholder-badge" aria-hidden="true">Coming soon</span>
                 </div>
               ) : (
-                <Link key={w.id} to={w.path} className="work-soon">
-                  <span className="icon-box icon-box-wa"><WhatsAppIcon size={24} /></span>
-                  <div>
-                    <h3>{w.name}</h3>
-                    <p>{w.teaser}</p>
-                  </div>
-                  <span className="text-link">Read the case study <Arrow /></span>
-                </Link>
+                <CaseStudyCard key={w.id} as="h3" study={w} headingId={`${w.id}-title`} />
               )
             )}
           </Reveal>

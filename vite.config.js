@@ -3,7 +3,7 @@ import path from 'node:path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { SITE } from './src/config.js';
-import { allies, goherbal, revenue } from './src/data/work.js';
+import { allies, goherbal, goherbalWhatsapp, revenue } from './src/data/work.js';
 import { FOUNDER, companyFaqs, lowerFirst, faqJsonLd, goherbalJsonLd, siteJsonLd } from './src/data/company.js';
 import { aiFaqs } from './src/data/plans.js';
 import { services } from './src/data/services.js';
@@ -22,6 +22,13 @@ const previews = [
     type: 'article',
     image: { src: goherbal.poster, ...goherbal.posterSize, alt: goherbal.posterAlt },
     jsonLd: goherbalJsonLd(),
+  },
+  {
+    route: goherbalWhatsapp.path,
+    title: `${goherbalWhatsapp.seoTitle} | JBN Media`,
+    description: goherbalWhatsapp.seoDescription,
+    type: 'article',
+    image: { src: goherbalWhatsapp.poster, ...goherbalWhatsapp.posterSize, alt: goherbalWhatsapp.posterAlt },
   },
   {
     route: '/about',
@@ -68,6 +75,7 @@ function llmsTxt() {
     ...(revenue.kes ? [`- Revenue paid through systems JBN Media built: over KES ${revenue.kes.toLocaleString('en-KE')} and counting${revenue.asOf ? ` (as of ${revenue.asOf})` : ''}`] : []),
     ...allies.map((a) => `- Partner: ${a.name}, ${lowerFirst(a.tag)}. ${a.name} is ${lowerFirst(a.blurb)}`),
     `- Built ${goherbal.name} (${goherbal.url}), an online herbal shop with M-Pesa and card checkout`,
+    `- Built the ${goherbalWhatsapp.name}: it answers customers in English, Swahili or Sheng, prices rider delivery from a location pin and takes M-Pesa payments in the chat`,
     `- Contact: ${SITE.email}, WhatsApp ${SITE.whatsappDisplay}`,
     '',
     '## Common questions',
@@ -76,6 +84,7 @@ function llmsTxt() {
     page('Pricing', '/pricing', 'Published package prices in KES'),
     page('Services', '/services', 'WhatsApp and website AI assistants, websites, M-Pesa payments, Chama/SACCO systems, document automation and marketing'),
     page('GoHerbal case study', goherbal.path, goherbal.seoDescription),
+    page('GoHerbal WhatsApp assistant case study', goherbalWhatsapp.path, goherbalWhatsapp.seoDescription),
     page('Partners', '/partners', 'Partner network and clients'),
     page('Results', '/results', 'Revenue paid through systems we built'),
     page('About', '/about', `Company story and founder, ${FOUNDER.name}`),

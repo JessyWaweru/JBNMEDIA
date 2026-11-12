@@ -27,15 +27,28 @@ export const goherbal = {
   confirmedSize: { width: 390, height: 844 },
 };
 
-// Work in progress, shown as "coming soon" cards next to the GoHerbal case study on the home page.
-// When one is ready: remove `comingSoon`, write the `teaser`, and add a `path` to its case study page.
+export const goherbalWhatsapp = {
+  path: '/work/goherbal-whatsapp',
+  name: 'GoHerbal WhatsApp assistant',
+  seoTitle: 'GoHerbal WhatsApp assistant: answers customers and takes M-Pesa orders in the chat',
+  seoDescription:
+    'How JBN Media built an AI WhatsApp assistant for GoHerbal, a Nairobi herbal brand: it recommends products in English, Swahili or Sheng, prices rider delivery from a location pin and sends an M-Pesa prompt, all inside WhatsApp.',
+  title: 'GoHerbal: a WhatsApp assistant that answers and takes the order',
+  teaser:
+    'Customers ask in their own words, get a product suggestion, drop a location pin for delivery and pay with an M-Pesa prompt, without leaving WhatsApp.',
+  video: '/case-studies/goherbal-whatsapp/goherbal-whatsapp-web.mp4',
+  poster: '/case-studies/goherbal-whatsapp/goherbal-whatsapp-poster.jpg',
+  posterSize: { width: 384, height: 792 },
+  posterAlt: "GoHerbal's WhatsApp assistant suggesting teas for a customer's stomach trouble",
+  summary: '/case-studies/goherbal-whatsapp/goherbal-whatsapp-order-summary.webp',
+  summarySize: { width: 384, height: 792 },
+};
+
+// More work for the home page, shown next to the GoHerbal shop case study.
+// An entry with `comingSoon: true` (just `id`, `name`, `teaser`) shows as a "coming soon" card with no link;
+// otherwise it is a full case-study card and needs `path`, `title`, `teaser`, `poster` and `posterSize`.
 export const upcomingWork = [
-  {
-    id: 'goherbal-whatsapp',
-    name: 'GoHerbal WhatsApp assistant',
-    teaser: 'The full story will be here once it is live.',
-    comingSoon: true,
-  },
+  { id: 'goherbal-whatsapp', ...goherbalWhatsapp },
 ];
 
 // The businesses we work with. Entries marked `placeholder` are examples to show the layout:
@@ -45,7 +58,7 @@ export const partners = [
     name: 'GoHerbal',
     sector: 'Herbal teas & wellness',
     location: 'Nairobi',
-    work: 'Online shop with M‑Pesa and card checkout, delivery options and live order tracking.',
+    work: 'Online shop with M‑Pesa and card checkout and live order tracking, plus a WhatsApp AI assistant that takes orders in the chat.',
     url: goherbal.url,
     urlDisplay: goherbal.urlDisplay,
     caseStudy: goherbal.path,
